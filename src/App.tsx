@@ -4,7 +4,7 @@ import Home from "../src/pages/Home/index";
 
 function App() {
 	return (
-		<div className="bg-primary font-Hmid">
+		<div className="bg-primary text-white">
 			<Home />
 		</div>
 	);

@@ -8,6 +8,7 @@ import "./index.css";
 import "./assets/fonts/HelveticaNeueCyr-Black.otf";
 import "./assets/fonts/HelveticaNeueCyr-Bold.otf";
 import "./assets/fonts/HelveticaNeueCyr-Medium.otf";
+import "./assets/fonts/HelveticaNeueCyr-Light.otf";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);

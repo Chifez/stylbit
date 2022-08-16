@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @font-face {
+	font-family: "Hlight";
+	src: url("./assets/fonts/HelveticaNeueCyr-Light.otf");
+}
+
+@font-face {
 	font-family: "Hmid";
 	src: url("./assets/fonts/HelveticaNeueCyr-Medium.otf");
 }

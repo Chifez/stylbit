@@ -4,6 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
+				Hlight: ["Hlight", "sans-serif"],
 				Hmid: ["Hmid", "sans-serif"],
 				Hbold: ["Hbold", "sans-serif"],
 				Hblack: ["Hblack", "sans-serif"],

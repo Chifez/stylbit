@@ -6,7 +6,7 @@ import Layout from "../../components/Layout";
 
 const index = () => {
 	return (
-		<div>
+		<div className="px-5">
 			<Layout>
 				<MainHero />
 				<MainProducts />
