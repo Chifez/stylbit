@@ -1,5 +1,7 @@
 import React from "react";
 import RoundButton from "../../components/RoundButton";
+import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
 
 const MainFooter = () => {
 	return (
@@ -17,7 +19,7 @@ const MainFooter = () => {
 					<input
 						type="text"
 						placeholder="email address"
-						className="px-10 py-1 border border-transparent text-black outline-none rounded-md"
+						className="px-10 py-1 border border-transparent text-black outline-none rounded-sm"
 					/>
 					<RoundButton
 						children="subscribe"
@@ -27,7 +29,12 @@ const MainFooter = () => {
 			</div>
 			<footer className="py-5">
 				<div className="flex justify-around items-start my-5">
-					<h2 className="text-[1.5rem] uppercase">faloni</h2>
+					<div className="flex flex-col justify-start items-start">
+						<h2 className="text-[1.5rem] uppercase mb-2">faloni</h2>
+						<p>fashion styling in simplicity</p>
+						<p>Call Us : +23412345678</p>
+						<p>send a mail : faloni@fashion.style</p>
+					</div>
 					<div className="flex flex-col capitalize">
 						<a href="/" className="my-2">
 							products
@@ -59,7 +66,14 @@ const MainFooter = () => {
 						</a>
 					</div>
 				</div>
-				<p className="text-[1rem]"> &copy; 2022 Faloni.All Rights Reserved</p>
+				<div className="flex justify-center items-center m-3">
+					<AiFillInstagram className="w-7 h-7 mx-2" />
+					<AiFillTwitterCircle className="w-7 h-7 mx-2" />
+					<FaFacebook className="w-7 h-7 mx-2" />
+				</div>
+				<p className="text-[1rem] text-secondary">
+					&copy; 2022 Faloni. All Rights Reserved
+				</p>
 			</footer>
 		</div>
 	);

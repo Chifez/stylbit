@@ -5,6 +5,7 @@ import { store } from "./app/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
+
 import "./assets/fonts/HelveticaNeueCyr-Black.otf";
 import "./assets/fonts/HelveticaNeueCyr-Bold.otf";
 import "./assets/fonts/HelveticaNeueCyr-Medium.otf";
