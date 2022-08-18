@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "../../components/ProductCard";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 const MainProducts = () => {
 	const settings = {
@@ -11,6 +12,7 @@ const MainProducts = () => {
 		speed: 500,
 		slidesToShow: 3,
 		swipeToSlide: true,
+		// arrows: false,
 		// slidesToScroll: 1,
 		responsive: [
 			{

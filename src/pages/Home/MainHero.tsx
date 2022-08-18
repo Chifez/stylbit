@@ -8,8 +8,8 @@ const MainHero = () => {
 	return (
 		<div>
 			<div className="relative top-5 flex justify-between items-start text-[7rem]">
-				<h2 className="relative left-5">NEW</h2>
-				<div className="relative flex flex-col items-end right-5">
+				<h2 className="relative left-0">NEW</h2>
+				<div className="relative flex flex-col items-end right-0">
 					<span className="flex justify-center items-center">
 						<a href="/">
 							<RoundButton

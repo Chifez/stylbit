@@ -4,9 +4,9 @@ import MainProducts from "./MainProducts";
 import MainFooter from "./MainFooter";
 import Layout from "../../components/Layout";
 
-const index = () => {
+const Home = () => {
 	return (
-		<div className="px-5">
+		<div className="px-8 bg-primary text-white">
 			<Layout>
 				<MainHero />
 				<MainProducts />
@@ -16,4 +16,4 @@ const index = () => {
 	);
 };
 
-export default index;
+export default Home;

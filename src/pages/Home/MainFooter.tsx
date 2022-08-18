@@ -7,7 +7,7 @@ const MainFooter = () => {
 	return (
 		<div className="text-center">
 			<div>
-				<h2 className="uppercase text-[3rem]">brand partners</h2>
+				{/* <h2 className="uppercase text-[3rem]">brand partners</h2> */}
 			</div>
 			<div>
 				<h2 className="uppercase text-[2rem]">Newsletters</h2>
@@ -37,10 +37,13 @@ const MainFooter = () => {
 					</div>
 					<div className="flex flex-col capitalize">
 						<a href="/" className="my-2">
-							products
+							<h2>products</h2>
 						</a>
 						<a href="/" className="my-2">
 							categories
+						</a>
+						<a href="/" className="my-2">
+							top picks
 						</a>
 						<a href="/" className="my-2">
 							Discounts
@@ -48,21 +51,24 @@ const MainFooter = () => {
 					</div>
 					<div className="flex flex-col capitalize">
 						<a href="/" className="my-2">
-							careers
-						</a>
-						<a href="/" className="my-2">
-							Blogs
+							<h2>careers</h2>
 						</a>
 						<a href="/" className="my-2">
 							Become a partner
 						</a>
+						<a href="/" className="my-2">
+							Blogs
+						</a>
 					</div>
 					<div className="flex flex-col capitalize">
 						<a href="/" className="my-2">
-							FAQ
+							<h2>FAQ</h2>
 						</a>
 						<a href="/" className="my-2">
 							about us
+						</a>
+						<a href="/" className="my-2">
+							help
 						</a>
 					</div>
 				</div>
