@@ -1,7 +1,7 @@
 import React from "react";
 import RoundButton from "../../components/RoundButton";
 import { FaTrash } from "react-icons/fa";
-import { image1 } from "../../assets";
+// import { image1 } from "../../assets";
 
 const CartItem = () => {
 	return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Select } from "../../Data/Types";
+import { Select } from "../Data/Types";
 
 const SelectInput = (props: { Options: Select }) => {
 	const { optionId, options } = props.Options;

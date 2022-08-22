@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import RoundButton from "../../components/RoundButton";
 import hero1 from "../../assets/deji-akinyele-ARm28szwP0o-unsplash.jpg";
 import hero2 from "../../assets/alexander-jawfox-GNd5gstTSg8-unsplash.jpg";
@@ -11,12 +12,12 @@ const MainHero = () => {
 				<h2 className="relative left-0">NEW</h2>
 				<div className="relative flex flex-col items-end right-0">
 					<span className="flex justify-center items-center">
-						<a href="/">
+						<Link to="/products">
 							<RoundButton
 								children="view more"
 								extraclasses="px-3 py-2 w-fit text-[0.7rem] font-bold uppercase"
 							/>
-						</a>
+						</Link>
 						<h2>FASHION </h2>
 					</span>
 					<h2>COLLECTIONS</h2>

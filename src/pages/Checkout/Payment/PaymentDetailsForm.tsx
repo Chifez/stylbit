@@ -1,8 +1,8 @@
 import React from "react";
 import AuthNavBar from "../../../components/AuthNavBar";
 import InputForm from "../../../components/InputInfo";
-import SelectInput from "../SelectInput";
 import { Link } from "react-router-dom";
+import SelectInput from "../../../components/SelectInput";
 
 const PaymentDetailsForm = () => {
 	const monthOption = {
@@ -53,13 +53,14 @@ const PaymentDetailsForm = () => {
 	return (
 		<div className="relative grid place-items-center col-span-2 border">
 			<AuthNavBar />
-			<form className="flex flex-col items-start p-5 gap-5 border border-[red]">
+			<form className="flex flex-col p-5 gap-5 border border-[red]">
+				<h2 className="text-center font-semibold">Card Details</h2>
 				<span className="flex flex-col">
 					<InputForm
 						label="Card Name"
 						type="text"
-						placeholder="card name"
-						className="p-1 border border-secondary bg-transparent rounded-sm px-2 outline-none"
+						placeholder="card name as shown on the card"
+						className="p-1 border min-w-fit border-secondary bg-transparent rounded-sm px-2 outline-none"
 					/>
 				</span>
 				<span className="flex flex-col">
@@ -93,7 +94,7 @@ const PaymentDetailsForm = () => {
 				</span>
 				<div className="flex gap-3">
 					<Link to="/checkout/">
-						<button className="text-center font-semibold border border-transparent rounded-md px-10 p-1 bg-[green] hover:bg-transparent hover:border-inherit">
+						<button className="text-center font-semibold border border-transparent rounded-md px-10 p-1 bg-secondary hover:bg-transparent hover:border-inherit">
 							Go back
 						</button>
 					</Link>
