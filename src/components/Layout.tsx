@@ -4,11 +4,11 @@ import Footer from "./Footer";
 
 const Layout = ({ children }: { children: ReactNode }) => {
 	return (
-		<>
+		<div className="bg-primary min-h-screen text-white">
 			<Header />
-			{children}
+			<div className="min-h-[40vh]">{children}</div>
 			<Footer />
-		</>
+		</div>
 	);
 };
 
