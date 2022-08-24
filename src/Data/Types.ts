@@ -1,10 +1,12 @@
 export type product = {
-	id: number;
+	id: string;
 	image: string;
 	name: string;
+	desc?: string;
 	newprice: string;
 	oldprice: string;
 	category: string;
+	toppick: boolean;
 };
 
 export type Select = {

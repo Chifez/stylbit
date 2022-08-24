@@ -1,19 +1,20 @@
 import React from "react";
 import RoundButton from "./RoundButton";
-import productImage from "../assets/dom-hill-nimElTcTNyY-unsplash.jpg";
 import { product } from "../Data/Types";
+import { Link } from "react-router-dom";
+import { FaLink } from "react-icons/fa";
 
 const ProductCard = (props: { productItem: product }) => {
-	const { image, name, newprice, oldprice } = props.productItem;
+	const { id, image, name, newprice, oldprice } = props.productItem;
 	return (
 		<div className="max-h-max max-w-max py-5 px-3">
-			<div>
+			<Link to={`/product/preview/${id}`}>
 				<img
 					src={image}
 					alt="product"
 					className="w-[25rem] h-[30rem] object-cover"
 				/>
-			</div>
+			</Link>
 			<div>
 				<p className="uppercase">{name}</p>
 				<div className="flex justify-between">

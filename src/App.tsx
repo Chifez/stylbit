@@ -10,6 +10,7 @@ import Page404 from "./pages/404";
 import Banner from "./components/Banner";
 import Shipping from "./pages/Checkout/Shipping";
 import Checkout from "./pages/Checkout/Payment";
+import Preview from "./pages/Preview";
 
 function App() {
 	return (
@@ -18,9 +19,9 @@ function App() {
 				<Route index element={<Home />} />
 				<Route path="/cart" element={<Cart />} />
 				<Route path="/products" element={<Products />} />
+				<Route path="/product/preview/:id" element={<Preview />} />
 				<Route path="/checkout" element={<Shipping />} />
 				<Route path="/checkout/payment" element={<Checkout />} />
-
 				<Route element={<Banner />}>
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />

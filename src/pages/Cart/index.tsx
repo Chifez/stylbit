@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../../components/Layout";
 import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
+import { products } from "../../Data/itemData";
+import { product } from "../../Data/Types";
 
 const Cart = () => {
 	return (
@@ -13,11 +15,14 @@ const Cart = () => {
 					<h2>price</h2>
 				</div>
 				<div>
+					{products.slice(0, 7).map((item: product) => (
+						<CartItem item={item} key={item.id} />
+					))}
+
+					{/* <CartItem />
 					<CartItem />
 					<CartItem />
-					<CartItem />
-					<CartItem />
-					<CartItem />
+					<CartItem /> */}
 				</div>
 				<div className="grid grid-cols-3 place-items-center">
 					<div />

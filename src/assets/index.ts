@@ -1,7 +1,7 @@
 import React from "react";
-// declare module "*.png"{
-//     const value:any;
-//     export = value;
+// declare module "*.jpg" {
+// 	const value: any;
+// 	export default value;
 // }
 
 // export * as Image1 from "../assets/alexander-jawfox-GNd5gstTSg8-unsplash.jpg";
