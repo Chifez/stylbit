@@ -10,6 +10,8 @@ import "./assets/fonts/HelveticaNeueCyr-Black.otf";
 import "./assets/fonts/HelveticaNeueCyr-Bold.otf";
 import "./assets/fonts/HelveticaNeueCyr-Medium.otf";
 import "./assets/fonts/HelveticaNeueCyr-Light.otf";
+import Scroll from "./utils/Scroll";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -17,7 +19,10 @@ const root = createRoot(container);
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<App />
+			<Router>
+				<Scroll />
+				<App />
+			</Router>
 		</Provider>
 	</React.StrictMode>
 );

@@ -51,9 +51,9 @@ const PaymentDetailsForm = () => {
 	};
 
 	return (
-		<div className="relative grid place-items-center col-span-2 border">
+		<div className="relative grid place-items-center col-span-2 border-r border-[#d8bebe] my-2">
 			<AuthNavBar />
-			<form className="flex flex-col p-5 gap-5 border border-[red]">
+			<form className="flex flex-col p-5 gap-5 shadow-xl">
 				<h2 className="text-center font-semibold">Card Details</h2>
 				<span className="flex flex-col">
 					<InputForm

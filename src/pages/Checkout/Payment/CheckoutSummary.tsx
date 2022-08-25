@@ -4,7 +4,7 @@ import SummaryTotalCard from "./SummaryTotalCard";
 
 const CheckoutSummary = () => {
 	return (
-		<div className="p-2 px-2">
+		<div className="my-3 px-2">
 			<h2 className="font-semibold text-[1.2rem]">Order summary</h2>
 			<div>
 				<ItemSummaryCard

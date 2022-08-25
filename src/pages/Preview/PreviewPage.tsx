@@ -1,28 +1,58 @@
 import React from "react";
 import RoundButton from "../../components/RoundButton";
 import { product } from "../../Data/Types";
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 const previewPage = (props: { products: product }) => {
-	const { image, name, oldprice, newprice, desc } = props.products;
+	const { image, name, oldprice, newprice, fulldesc, instock } = props.products;
 	return (
-		<div className="grid grid-flow-col p-5">
-			<img
-				src={image}
-				alt="imageitem"
-				className="w-[25rem] h-[30rem] object-cover border border-[blue]"
-			/>
-			<div className="col-span-3 border border-[red]">
+		<div className="grid grid-cols-3 px-20 gap-5">
+			<span className="grid col-span-1 gap-5">
+				<img
+					src={image}
+					alt="imageitem"
+					className=" w-[25rem] h-[30rem] object-cover"
+				/>
+				<div className="grid grid-cols-3 gap-3">
+					<img src={image} alt="imageitem" />
+					<img src={image} alt="imageitem" />
+					<img src={image} alt="imageitem" />
+				</div>
+			</span>
+			<div className="col-span-2 py-20">
 				<h2 className="font-semibold text-[1.2rem] capitalize">{name}</h2>
-				<span className="flex items-center text-[0.8rem]">
+				<span className="flex items-center gap-3 text-[0.8rem] py-2">
 					<p className="text-secondary">${oldprice}</p>
-					<div className="w-5 h-[1px] bg-primary mx-1"></div>
+					<div className="w-5 h-[1px] bg-white"></div>
 					<p>${newprice}</p>
 				</span>
-				<p>{desc}</p>
-				<div className="flex items-center">
-					<RoundButton children="+" extraclasses="w-5 h-5" />
-					<span className="px-2">2</span>
-					<RoundButton children="-" extraclasses="w-5 h-5" />
+				<div>
+					{instock ? (
+						<p className="text-[orange]">In stock</p>
+					) : (
+						<p className="text-[crimson] line-through">instock</p>
+					)}
+				</div>
+				<p className="py-2 w-[70%]">{fulldesc}</p>
+				<div className="flex items-center py-2">
+					<label htmlFor="qty">Qty:</label>
+					<span className="relative">
+						<input
+							type="number"
+							name="qty"
+							min="1"
+							defaultValue="1"
+							className="w-14 h-8 outline-none border text-center bg-transparent text-white"
+						/>
+						<div className="absolute top-[15%] right-1">
+							<AiOutlineUp className=" w-3 h-3" />
+							<AiOutlineDown className="w-3 h-3" />
+						</div>
+					</span>
+					<RoundButton
+						children="ADD TO CART"
+						extraclasses="px-5 py-2 rounded-none font-semibold cursor-pointer bg-[green] text-[white]"
+					/>
 				</div>
 			</div>
 		</div>

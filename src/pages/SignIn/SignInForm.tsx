@@ -48,9 +48,14 @@ const SignInForm = () => {
 						forgot password?
 					</a>
 				</Link>
-				<button className=" bg-[green] rounded-sm border-[green] font-semibold p-2 mt-5">
+
+				<Link
+					to="/checkout"
+					className=" bg-[green] text-center rounded-sm border-[green] font-semibold p-2 mt-5"
+				>
 					Sign In
-				</button>
+				</Link>
+
 				<div className="text-center flex justify-center items-center my-2">
 					<div className="w-full bg-secondary h-[1px] mx-1" />
 					<p> OR</p>

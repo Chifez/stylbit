@@ -33,7 +33,7 @@ const Cart = () => {
 					</span>
 				</div>
 				<span className="flex justify-center py-5">
-					<Link to="/checkout">
+					<Link to="/signin">
 						<button className="text-center font-semibold border border-transparent rounded-md px-10 p-1 bg-[green] hover:bg-transparent hover:border-inherit">
 							Checkout
 						</button>

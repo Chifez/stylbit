@@ -14,21 +14,19 @@ import Preview from "./pages/Preview";
 
 function App() {
 	return (
-		<Router>
-			<Routes>
-				<Route index element={<Home />} />
-				<Route path="/cart" element={<Cart />} />
-				<Route path="/products" element={<Products />} />
-				<Route path="/product/preview/:id" element={<Preview />} />
-				<Route path="/checkout" element={<Shipping />} />
-				<Route path="/checkout/payment" element={<Checkout />} />
-				<Route element={<Banner />}>
-					<Route path="/signin" element={<SignIn />} />
-					<Route path="/signup" element={<SignUp />} />
-				</Route>
-				<Route path="*" element={<Page404 />} />
-			</Routes>
-		</Router>
+		<Routes>
+			<Route index element={<Home />} />
+			<Route path="/cart" element={<Cart />} />
+			<Route path="/products" element={<Products />} />
+			<Route path="/product/preview/:id" element={<Preview />} />
+			<Route path="/checkout" element={<Shipping />} />
+			<Route path="/checkout/payment" element={<Checkout />} />
+			<Route element={<Banner />}>
+				<Route path="/signin" element={<SignIn />} />
+				<Route path="/signup" element={<SignUp />} />
+			</Route>
+			<Route path="*" element={<Page404 />} />
+		</Routes>
 	);
 }
 

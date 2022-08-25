@@ -3,6 +3,8 @@ export type product = {
 	image: string;
 	name: string;
 	desc?: string;
+	fulldesc: string;
+	instock: boolean;
 	newprice: string;
 	oldprice: string;
 	category: string;

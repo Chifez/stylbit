@@ -11,6 +11,9 @@ export const products: product[] = [
 		image: Image1,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "100",
 		oldprice: "200",
 		category: "category men",
@@ -21,6 +24,9 @@ export const products: product[] = [
 		image: Image3,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "50",
 		oldprice: "150",
 		category: "category women",
@@ -31,6 +37,9 @@ export const products: product[] = [
 		image: Image2,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "70",
 		oldprice: "120",
 		category: "category men",
@@ -41,6 +50,9 @@ export const products: product[] = [
 		image: Image1,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "150",
 		oldprice: "200",
 		category: "category men",
@@ -51,6 +63,9 @@ export const products: product[] = [
 		image: Image5,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -61,6 +76,9 @@ export const products: product[] = [
 		image: Image3,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -71,6 +89,9 @@ export const products: product[] = [
 		image: Image4,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -81,6 +102,9 @@ export const products: product[] = [
 		image: Image1,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -91,6 +115,9 @@ export const products: product[] = [
 		image: Image2,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -101,6 +128,9 @@ export const products: product[] = [
 		image: Image3,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -111,6 +141,9 @@ export const products: product[] = [
 		image: Image1,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -121,6 +154,9 @@ export const products: product[] = [
 		image: Image5,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -131,6 +167,9 @@ export const products: product[] = [
 		image: Image2,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -141,6 +180,9 @@ export const products: product[] = [
 		image: Image1,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -151,6 +193,9 @@ export const products: product[] = [
 		image: Image5,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -161,6 +206,9 @@ export const products: product[] = [
 		image: Image2,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -171,6 +219,9 @@ export const products: product[] = [
 		image: Image3,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -181,6 +232,9 @@ export const products: product[] = [
 		image: Image5,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -191,6 +245,9 @@ export const products: product[] = [
 		image: Image1,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: false,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",
@@ -201,6 +258,9 @@ export const products: product[] = [
 		image: Image2,
 		name: "the first style",
 		desc: "a little description about the product",
+		fulldesc:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, culpa. Vero saepe iste aperiam quis tempore ipsam ullam pariatur distinctio?",
+		instock: true,
 		newprice: "120",
 		oldprice: "200",
 		category: "category women",

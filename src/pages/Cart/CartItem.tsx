@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const CartItem = (props: { item: product }) => {
 	return (
 		<div className="grid grid-cols-3 my-5 place-items-center">
-			<div className="flex col-span-1 border border-[#d8bebe] items-center gap-3">
+			<div className="flex col-span-1 items-center gap-3">
 				<Link to={`/product/preview/${props.item.id}`}>
 					<img
 						src={props.item.image}
