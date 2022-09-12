@@ -5,7 +5,6 @@ import { store } from "./app/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
-
 import "./assets/fonts/HelveticaNeueCyr-Black.otf";
 import "./assets/fonts/HelveticaNeueCyr-Bold.otf";
 import "./assets/fonts/HelveticaNeueCyr-Medium.otf";
@@ -18,12 +17,12 @@ const root = createRoot(container);
 
 root.render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<Router>
+		<Router>
+			<Provider store={store}>
 				<Scroll />
 				<App />
-			</Router>
-		</Provider>
+			</Provider>
+		</Router>
 	</React.StrictMode>
 );
 

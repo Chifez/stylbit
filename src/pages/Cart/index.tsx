@@ -2,10 +2,20 @@ import React from "react";
 import Layout from "../../components/Layout";
 import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
-import { products } from "../../Data/itemData";
 import { product } from "../../Data/Types";
+import { useAppSelector } from "../../app/hooks";
 
 const Cart = () => {
+	const products = useAppSelector((state) => state?.reducer.cart);
+	const getTotal = () => {
+		let totalQuantity = 0;
+		let totalPrice = 0;
+		products.forEach((item) => {
+			totalQuantity += item.quantity;
+			totalPrice += item.newprice * item.quantity;
+		});
+		return { totalPrice, totalQuantity };
+	};
 	return (
 		<Layout>
 			<div className="border-b border-secondary pb-2">
@@ -15,21 +25,17 @@ const Cart = () => {
 					<h2>price</h2>
 				</div>
 				<div>
-					{products.slice(0, 7).map((item: product) => (
+					{products.length === 0 && <p>EMPTY CART</p>}
+					{products?.map((item) => (
 						<CartItem item={item} key={item.id} />
 					))}
-
-					{/* <CartItem />
-					<CartItem />
-					<CartItem />
-					<CartItem /> */}
 				</div>
 				<div className="grid grid-cols-3 place-items-center">
 					<div />
 					<div />
 					<span className="flex justify-start items-center mt-5 border-b border-secondary px-4">
 						<p className="px-2">Total:</p>
-						<span className="text-center">$4465</span>
+						<span className="text-center">${getTotal().totalPrice}</span>
 					</span>
 				</div>
 				<span className="flex justify-center py-5">

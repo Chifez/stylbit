@@ -5,8 +5,8 @@ export type product = {
 	desc?: string;
 	fulldesc: string;
 	instock: boolean;
-	newprice: string;
-	oldprice: string;
+	newprice: number;
+	oldprice: number;
 	category: string;
 	toppick: boolean;
 };
