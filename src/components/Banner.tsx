@@ -5,7 +5,7 @@ const Banner = () => {
 	return (
 		<div className="grid grid-cols-5 bg-primary">
 			<div
-				className={`relative col-span-2  bg-secondary bg-blend-overlay text-primary bg-[url('./assets/oladimeji-odunsi-tUUmR82pq68-unsplash.jpg')] bg-cover`}
+				className={`relative col-span-2  bg-secondary bg-blend-overlay text-primary bg-[url('./assets/oladimeji-odunsi-tUUmR82pq68-unsplash.webp')] bg-cover`}
 			>
 				{/* <p className="text-center">
 					The best place to find the perfect item that suits your style

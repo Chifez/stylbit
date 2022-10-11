@@ -1,9 +1,9 @@
 import { product } from "./Types";
-import Image1 from "../assets/alexander-jawfox-GNd5gstTSg8-unsplash.jpg";
-import Image2 from "../assets/dami-adebayo-k6aQzmIbR1s-unsplash.jpg";
-import Image3 from "../assets/deji-akinyele-ARm28szwP0o-unsplash.jpg";
-import Image4 from "../assets/dom-hill-nimElTcTNyY-unsplash.jpg";
-import Image5 from "../assets/oladimeji-odunsi-tUUmR82pq68-unsplash.jpg";
+import Image1 from "../assets/alexander-jawfox-GNd5gstTSg8-unsplash.webp";
+import Image2 from "../assets/dami-adebayo-k6aQzmIbR1s-unsplash.webp";
+import Image3 from "../assets/deji-akinyele-ARm28szwP0o-unsplash.webp";
+import Image4 from "../assets/dom-hill-nimElTcTNyY-unsplash.webp";
+import Image5 from "../assets/oladimeji-odunsi-tUUmR82pq68-unsplash.webp";
 
 export const products: product[] = [
 	{

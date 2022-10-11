@@ -12,12 +12,13 @@ const PreviewPage = (props: { products: product }) => {
 	const dispatch = useAppDispatch();
 	return (
 		<div className="grid grid-cols-3 px-20 gap-5">
-			<span className="grid col-span-1 gap-5">
+			<span className="grid col-span-1 gap-3">
 				<img
 					src={image}
 					alt="imageitem"
-					className=" w-[25rem] h-[30rem] object-cover"
+					className=" w-[25rem] h-[28rem] object-cover"
 				/>
+
 				<div className="grid grid-cols-3 gap-3">
 					<img src={image} alt="imageitem" />
 					<img src={image} alt="imageitem" />

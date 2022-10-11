@@ -8,7 +8,6 @@ const PaymentDetailsForm = () => {
 	const monthOption = {
 		optionId: "month",
 		options: [
-			"month",
 			"january",
 			"february",
 			"march",
@@ -75,8 +74,16 @@ const PaymentDetailsForm = () => {
 					<span>
 						<label htmlFor="expiration date">Expiration Date</label>
 						<span className="flex gap-5 bg-transparent rounded-sm outline-none">
-							<SelectInput Options={monthOption} />
-							<SelectInput Options={yearOption} />
+							<SelectInput
+								Options={monthOption}
+								initialstate="month"
+								extraclass="w-max px-1"
+							/>
+							<SelectInput
+								Options={yearOption}
+								initialstate="year"
+								extraclass="w-max px-1"
+							/>
 						</span>
 					</span>
 					<span className="flex flex-col">

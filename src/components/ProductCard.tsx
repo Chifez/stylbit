@@ -13,13 +13,14 @@ const ProductCard = (props: { productItem: product }) => {
 
 	return (
 		<div className="max-h-max max-w-max py-5 px-3">
-			<Link to={`/product/preview/${id}`}>
+			<Link to={`/product/preview/${id}`} className="w-[25rem] h-[27rem]">
 				<img
 					src={image}
 					alt="product"
-					className="w-[25rem] h-[30rem] object-cover"
+					className=" w-[25rem] h-[27rem] object-cover"
 				/>
 			</Link>
+
 			<div>
 				<p className="uppercase">{name}</p>
 				<div className="flex justify-between">
