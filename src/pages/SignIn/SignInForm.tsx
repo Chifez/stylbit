@@ -1,48 +1,30 @@
-import React, { useState } from "react";
-import { MdOutlineVisibilityOff, MdOutlineVisibility } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import AuthNavBar from "../../components/AuthNavBar";
 import InputForm from "../../components/InputInfo";
 
 const SignInForm = () => {
-	const [visible, setVisible] = useState(false);
-	const toggle = () => {
-		setVisible(!visible);
-	};
 	return (
 		<div className="relative flex flex-col justify-center items-center h-screen">
 			<AuthNavBar />
-			<form className="flex flex-col p-10 rounded-xl shadow-2xl w-[45%]">
-				<h2 className="text-center font-semibold font capitalize">Sign in</h2>
-				<InputForm
-					label="Email"
-					type="text"
-					placeholder="email"
-					className="p-1 border border-secondary bg-transparent rounded-sm px-2 outline-none"
-				/>
-
-				<label htmlFor="Password" className="capitalize">
-					password
-				</label>
-				<div className="relative flex items-center border border-secondary rounded-sm">
+			<form className="flex flex-col p-10 rounded-xl shadow-2xl gap-2 w-[32vw]">
+				<h2 className="text-center font-semibold capitalize">Sign in</h2>
+				<div className="flex flex-col gap-5">
 					<InputForm
+						label="Email"
 						type="text"
-						placeholder="Password"
-						className="outline-none p-1 border-none mx-2 bg-transparent"
+						placeholder="Email"
+						className="flex-1 p-1 bg-transparent outline-none"
 					/>
-					{visible ? (
-						<MdOutlineVisibilityOff
-							onClick={toggle}
-							className="absolute right-2 fill-white"
-						/>
-					) : (
-						<MdOutlineVisibility
-							onClick={toggle}
-							className="absolute right-2 fill-white"
-						/>
-					)}
+
+					<InputForm
+						type="password"
+						label="password"
+						placeholder="Password"
+						className="flex-1 outline-none p-1 bg-transparent"
+					/>
 				</div>
+
 				<Link to="/">
 					<a href="/" className="text-[0.8rem]">
 						forgot password?

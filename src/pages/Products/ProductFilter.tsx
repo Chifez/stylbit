@@ -24,10 +24,10 @@ const ProductFilter = () => {
 				extraclass="w-[11rem] px-1"
 			/>
 			<div className="relative flex items-center justify-between gap-1 px-2 border">
-				<InputForm
+				<input
 					type="text"
 					placeholder="Search keyword"
-					className="flex-1 outline-none border-none bg-transparent"
+					className="flex-1 outline-none bg-transparent"
 				/>
 				<BsSearch className=" fill-white" />
 			</div>

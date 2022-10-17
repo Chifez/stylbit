@@ -59,7 +59,7 @@ const PaymentDetailsForm = () => {
 						label="Card Name"
 						type="text"
 						placeholder="card name as shown on the card"
-						className="p-1 border min-w-fit border-secondary bg-transparent rounded-sm px-2 outline-none"
+						className="p-1 min-w-fit bg-transparent rounded-sm px-2 outline-none"
 					/>
 				</span>
 				<span className="flex flex-col">
@@ -67,22 +67,22 @@ const PaymentDetailsForm = () => {
 						label="Card Number"
 						type="text"
 						placeholder="card number"
-						className="p-1 border border-secondary bg-transparent rounded-sm px-2 outline-none"
+						className="p-1 bg-transparent rounded-sm px-2 outline-none"
 					/>
 				</span>
-				<span className="flex gap-2 items-center">
+				<span className="flex gap-2 items-end justify-center">
 					<span>
 						<label htmlFor="expiration date">Expiration Date</label>
 						<span className="flex gap-5 bg-transparent rounded-sm outline-none">
 							<SelectInput
 								Options={monthOption}
 								initialstate="month"
-								extraclass="w-max px-1"
+								extraclass="w-max p-1 border-secondary rounded-sm"
 							/>
 							<SelectInput
 								Options={yearOption}
 								initialstate="year"
-								extraclass="w-max px-1"
+								extraclass="w-max p-1 border-secondary rounded-sm"
 							/>
 						</span>
 					</span>
@@ -91,12 +91,12 @@ const PaymentDetailsForm = () => {
 							label="CVV"
 							type="text"
 							placeholder="CVV"
-							className="p-1 border border-secondary bg-transparent rounded-sm px-2 outline-none"
+							className="p-1 bg-transparent rounded-sm px-2 outline-none"
 						/>
 					</span>
 				</span>
 				<span className="flex items-center gap-2">
-					<InputForm type="checkbox" />
+					<input type="checkbox" />
 					<p>Remember this details</p>
 				</span>
 				<div className="flex gap-3">

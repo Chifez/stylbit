@@ -77,7 +77,7 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 						<Link to="/products">
 							<RoundButton
 								children="view more"
-								extraclasses="px-3 py-2 w-fit text-[0.7rem] font-bold uppercase"
+								extraclasses="font-Hmid px-4 py-2 w-fit text-[0.8rem] font-bold uppercase"
 							/>
 						</Link>
 						<motion.h2

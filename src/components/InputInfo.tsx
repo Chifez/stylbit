@@ -1,24 +1,45 @@
-import React from "react";
-
+import { useState } from "react";
+import { MdOutlineVisibilityOff, MdOutlineVisibility } from "react-icons/md";
 const InputForm = (props: {
 	label?: string;
 	type?: string;
 	placeholder?: string;
 	className?: string;
 }) => {
+	const [visible, setVisible] = useState(false);
+	const toggle = () => {
+		setVisible(!visible);
+	};
 	return (
-		<>
-			{props.label && (
-				<label htmlFor={props.label} className="capitalize">
-					{props.label}
-				</label>
-			)}
-			<input
-				type={props.type}
-				placeholder={props.placeholder}
-				className={props.className}
-			/>
-		</>
+		<div className="relative w-full">
+			<div className="px-2 flex items-center justify-between border border-secondary rounded-sm">
+				<input
+					type={!visible ? props.type : "text"}
+					id={props.label}
+					name={props.label}
+					placeholder={props.placeholder}
+					className={`${props.className} outline-none peer placeholder-transparent`}
+				/>
+				{props.type === "password" && (
+					<span onClick={toggle}>
+						{visible ? (
+							<MdOutlineVisibilityOff className="fill-white" />
+						) : (
+							<MdOutlineVisibility className="fill-white" />
+						)}
+					</span>
+				)}
+				{props.label && (
+					<label
+						htmlFor={props.label}
+						id={props.label}
+						className="absolute capitalize text-sm -top-3 bg-primary p-[2px] peer-placeholder-shown:text-capitalize peer-placeholder-shown:text-base peer-placeholder-shown:top-[2px] peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-[lightgrey] transition-all"
+					>
+						{props.label}
+					</label>
+				)}
+			</div>
+		</div>
 	);
 };
 
