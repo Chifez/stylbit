@@ -8,44 +8,26 @@ const PaymentDetailsForm = () => {
 	const monthOption = {
 		optionId: "month",
 		options: [
-			"january",
-			"february",
-			"march",
-			"april",
-			"may",
-			"june",
-			"july",
-			"august",
-			"september",
-			"october",
-			"november",
-			"december",
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December",
 		],
 	};
 
 	const yearOption = {
 		optionId: "year",
 		options: [
-			"year",
-			2022,
-			2023,
-			2024,
-			2025,
-			2026,
-			2027,
-			2028,
-			2029,
-			2030,
-			2031,
-			2032,
-			2033,
-			2034,
-			2035,
-			2036,
-			2037,
-			2038,
-			2039,
-			2040,
+			2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033,
+			2034, 2035, 2036, 2037, 2038, 2039, 2040,
 		],
 	};
 
@@ -77,12 +59,12 @@ const PaymentDetailsForm = () => {
 							<SelectInput
 								Options={monthOption}
 								initialstate="month"
-								extraclass="w-max p-1 border-secondary rounded-sm"
+								extraclass="w-[7rem] p-1 border-secondary rounded-sm"
 							/>
 							<SelectInput
 								Options={yearOption}
 								initialstate="year"
-								extraclass="w-max p-1 border-secondary rounded-sm"
+								extraclass="w-[5rem] p-1 border-secondary rounded-sm"
 							/>
 						</span>
 					</span>

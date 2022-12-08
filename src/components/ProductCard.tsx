@@ -18,6 +18,7 @@ const ProductCard = (props: { productItem: product }) => {
 				<img
 					src={image}
 					alt="product"
+					loading="lazy"
 					className=" w-[25rem] h-[27rem] object-cover"
 				/>
 			</Link>

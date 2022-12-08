@@ -17,8 +17,8 @@ const MainFooter = () => {
 				<div className="my-5 flex justify-center items-center">
 					<input
 						type="text"
-						placeholder="email address"
-						className="px-10 py-1 border border-transparent text-black outline-none rounded-sm"
+						placeholder="Email address"
+						className="pl-2 pr-10 py-1 border border-transparent text-black outline-none rounded-sm"
 					/>
 					<RoundButton
 						children="subscribe"

@@ -29,7 +29,7 @@ const SelectInput = (props: {
 				<div
 					className={`${
 						open ? "block" : "hidden"
-					} w-full border absolute bg-primary`}
+					} w-full border absolute bg-primary cursor-pointer z-20`}
 				>
 					{options.map((item, index) => (
 						<option
