@@ -1,20 +1,14 @@
 import Layout from "../../components/Layout";
 import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
-import { product } from "../../Data/Types";
+// import { product } from "../../Data/Types";
 import { useAppSelector } from "../../app/hooks";
+import { getTotal } from "../../utils/GetTotal";
 
 const Cart = () => {
 	const products = useAppSelector((state) => state?.reducer.cart);
-	const getTotal = () => {
-		let totalQuantity = 0;
-		let totalPrice = 0;
-		products.forEach((item) => {
-			totalQuantity += item.quantity;
-			totalPrice += item.newprice * item.quantity;
-		});
-		return { totalPrice, totalQuantity };
-	};
+	const TotalPrice = getTotal(products).totalPrice;
+
 	return (
 		<Layout>
 			{products.length === 0 && (
@@ -39,7 +33,7 @@ const Cart = () => {
 						<div />
 						<span className="flex justify-start items-center mt-5 border-b border-secondary px-4">
 							<p className="px-2">Total:</p>
-							<span className="text-center">${getTotal().totalPrice}</span>
+							<span className="text-center">${TotalPrice}</span>
 						</span>
 					</div>
 					<span className="flex justify-center py-5">

@@ -37,7 +37,7 @@ const cartSlice = createSlice({
 				name: string;
 				desc?: string;
 				newprice: number;
-				// quantity?: number
+				prod_quantity?: number;
 			}>
 		) => {
 			const itemIncart = state.cart.find(
@@ -45,7 +45,12 @@ const cartSlice = createSlice({
 			);
 			itemIncart
 				? itemIncart.quantity++
-				: state.cart.push({ ...action.payload, quantity: 1 });
+				: state.cart.push({
+						...action.payload,
+						quantity: action.payload.prod_quantity
+							? action.payload.prod_quantity
+							: 1,
+				  });
 		},
 		incrementQuantity: (
 			state,

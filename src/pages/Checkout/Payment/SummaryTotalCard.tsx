@@ -1,6 +1,6 @@
 import React from "react";
 
-const SummaryTotalCard = (props: { title: string; value: string }) => {
+const SummaryTotalCard = (props: { title: string; value: number }) => {
 	return (
 		<div className="flex justify-between">
 			<h3>{props.title}</h3>

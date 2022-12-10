@@ -73,7 +73,7 @@ const PaymentDetailsForm = () => {
 							label="CVV"
 							type="text"
 							placeholder="CVV"
-							className="p-1 bg-transparent rounded-sm px-2 outline-none"
+							className="p-1 bg-transparent accent-[red] rounded-sm px-2 outline-none"
 						/>
 					</span>
 				</span>

@@ -60,7 +60,16 @@ const PreviewPage = (props: { products: product }) => {
 						children="ADD TO CART"
 						extraclasses="px-5 py-2 rounded-none font-semibold cursor-pointer bg-[green] text-[white]"
 						onClick={() =>
-							dispatch(addToCart({ id, name, desc, image, newprice }))
+							dispatch(
+								addToCart({
+									id,
+									name,
+									desc,
+									image,
+									newprice,
+									prod_quantity: input,
+								})
+							)
 						}
 					/>
 				</div>

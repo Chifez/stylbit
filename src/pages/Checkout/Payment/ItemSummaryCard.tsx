@@ -1,9 +1,7 @@
-import React from "react";
-
 const ItemSummaryCard = (props: {
 	name: string;
 	quantity: number;
-	desc: string;
+	desc?: string;
 	price: number;
 }) => {
 	return (
