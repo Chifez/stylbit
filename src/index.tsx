@@ -11,18 +11,22 @@ import "./assets/fonts/HelveticaNeueCyr-Medium.otf";
 import "./assets/fonts/HelveticaNeueCyr-Light.otf";
 import Scroll from "./utils/Scroll";
 import { BrowserRouter as Router } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
+const queryclient = new QueryClient();
 root.render(
 	<React.StrictMode>
-		<Router>
-			<Provider store={store}>
-				<Scroll />
-				<App />
-			</Provider>
-		</Router>
+		<QueryClientProvider client={queryclient}>
+			<Router>
+				<Provider store={store}>
+					<Scroll />
+					<App />
+				</Provider>
+			</Router>
+		</QueryClientProvider>
 	</React.StrictMode>
 );
 

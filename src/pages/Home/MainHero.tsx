@@ -6,6 +6,7 @@ import hero2 from "../../assets/alexander-jawfox-GNd5gstTSg8-unsplash.webp";
 import { BsArrowDown } from "react-icons/bs";
 import { FC } from "react";
 import { motion, Variants, HTMLMotionProps } from "framer-motion";
+import { getProducts } from "../../features/api/product.api";
 
 interface Props extends HTMLMotionProps<"div"> {
 	delay?: number;
@@ -76,6 +77,7 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 					<span className="flex justify-center items-center">
 						<Link to="/products">
 							<RoundButton
+								onClick={getProducts}
 								children="view more"
 								extraclasses="font-Hmid px-4 py-2 w-fit text-[0.8rem] font-bold uppercase"
 							/>
