@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Select } from "../Data/Types";
+import { SelectFilter, SelectOptions } from "../Data/Types";
 import { RiArrowDropDownLine } from "react-icons/ri";
 const SelectInput = (props: {
-	Options: Select;
+	Options: SelectFilter;
 	initialstate: string;
 	extraclass: string;
 }) => {
-	const { optionId, options } = props.Options;
+	const { options } = props.Options;
 
 	const [selectedInput, setSelectedInput] = useState(props.initialstate);
 	const [open, setOpen] = useState(false);
@@ -35,13 +35,15 @@ const SelectInput = (props: {
 						<option
 							className="hover:bg-[grey] px-2"
 							key={index}
-							value={item}
+							value={item.title}
 							onClick={(e) => {
 								setSelectedInput((e.target as HTMLInputElement).value);
 								setOpen(false);
+								item.getCategory && item.getCategory();
+								// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 							}}
 						>
-							{item}
+							{item.title}
 						</option>
 					))}
 				</div>

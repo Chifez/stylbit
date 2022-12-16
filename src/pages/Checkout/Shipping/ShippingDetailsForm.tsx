@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import AuthNavBar from "../../../components/AuthNavBar";
 import InputForm from "../../../components/InputInfo";
-import SelectInput from "../../../components/SelectInput";
+import SelectInput from "../../../components/SelectOptions";
 
 const ShippingDetailsForm = () => {
 	const phonecode = {

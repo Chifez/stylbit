@@ -2,7 +2,7 @@ import React from "react";
 import AuthNavBar from "../../../components/AuthNavBar";
 import InputForm from "../../../components/InputInfo";
 import { Link } from "react-router-dom";
-import SelectInput from "../../../components/SelectInput";
+import SelectInput from "../../../components/SelectOptions";
 
 const PaymentDetailsForm = () => {
 	const monthOption = {

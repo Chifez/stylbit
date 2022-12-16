@@ -9,9 +9,18 @@ export type product = {
 	oldprice: number;
 	category: string;
 	toppick: boolean;
+	quantity?: number;
 };
 
-export type Select = {
+export type SelectFilter = {
 	optionId: string;
-	options: (string | number)[];
+	options: {
+		title: string | number;
+		getCategory?: () => Promise<void>;
+	}[];
+};
+
+export type SelectOptions = {
+	optionId: string;
+	options: string[] | number[];
 };
