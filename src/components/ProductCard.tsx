@@ -1,4 +1,3 @@
-import React from "react";
 import RoundButton from "./RoundButton";
 import { product } from "../Data/Types";
 import { Link } from "react-router-dom";

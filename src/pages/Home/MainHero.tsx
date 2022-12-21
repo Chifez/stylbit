@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import RoundButton from "../../components/RoundButton";
 import hero1 from "../../assets/deji-akinyele-ARm28szwP0o-unsplash.webp";
@@ -117,10 +116,14 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 					</motion.h2>
 				</div>
 			</div>
-			<div className="grid grid-cols-3 gap-5">
-				<img src={hero1} alt="hero1" />
-				<img src={hero2} alt="hero2" className="mt-[5.5rem]" />
-				<div className="relative mt-[5.5rem] text-sm">
+			<div className="grid grid-cols-3 gap-3 h-full items-end">
+				<div className="h-[75vh]">
+					<img src={hero1} alt="hero1" className="h-full w-full object-cover" />
+				</div>
+				<div className="h-[65vh]">
+					<img src={hero2} alt="hero2" className="h-full w-full object-cover" />
+				</div>
+				<div className="relative h-[65vh] text-sm">
 					<h2>
 						The brand was originally aimed at men's fashion.In 1985 all women's
 						fashion were launched;from casual to the most urban{" "}

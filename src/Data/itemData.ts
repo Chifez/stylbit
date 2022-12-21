@@ -1,3 +1,13 @@
+// import { useState } from "react";
+// import { useQuery } from "@tanstack/react-query";
+// import { getProducts } from "../features/api/product.api";
+
+// const Products = ()=>{
+// 	const [productCall,setProductCall] = useState<(()=>void)>(getProducts);
+
+// 	const {data,isLoading,error,isError} = useQuery({queryKey:['products'], queryFn:productCall});
+
+// }
 import { product } from "./Types";
 import Image1 from "../assets/alexander-jawfox-GNd5gstTSg8-unsplash.webp";
 import Image2 from "../assets/dami-adebayo-k6aQzmIbR1s-unsplash.webp";

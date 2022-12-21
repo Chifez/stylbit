@@ -45,7 +45,7 @@ const MainProducts = () => {
 	};
 	return (
 		<div>
-			<h2 className="text-[5rem] uppercase my-3 font-Hlight">Top sales</h2>
+			<h2 className="text-[5rem] uppercase my-3 ">Top sales</h2>
 
 			<Slider {...settings}>
 				{products.map(
