@@ -6,7 +6,7 @@ import Layout from "../../components/Layout";
 
 const Home = () => {
 	return (
-		<div className="px-8 bg-primary text-white">
+		<div className="px-4 md:px-8 bg-primary text-white">
 			<Layout>
 				<MainHero />
 				<MainProducts />

@@ -22,22 +22,22 @@ const ProductCard = (props: { productItem: product }) => {
 				/>
 			</Link>
 
-			<div>
-				<p className="uppercase text-sm">{name}</p>
-				<div className="flex justify-between">
+			<div className="flex justify-between mt-2 ">
+				<div className="flex flex-col items-start">
+					<p className="uppercase text-sm">{name}</p>
 					<span className="flex justify-around items-center text-[0.8rem]">
 						<p className="text-secondary">${oldprice}</p>
 						<div className="w-5 h-[1px] bg-white mx-1"></div>
 						<p>${newprice}</p>
 					</span>
-					<RoundButton
-						children={<HiPlus />}
-						extraclasses="w-5 h-5 flex items-center justify-center mx-0"
-						onClick={() =>
-							dispatch(addToCart({ id, name, newprice, image, desc }))
-						}
-					/>
 				</div>
+				<RoundButton
+					children={<HiPlus />}
+					extraclasses="w-8 h-8 flex items-center justify-center mx-0"
+					onClick={() =>
+						dispatch(addToCart({ id, name, newprice, image, desc }))
+					}
+				/>
 			</div>
 		</div>
 	);

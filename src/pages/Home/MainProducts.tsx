@@ -32,22 +32,27 @@ const MainProducts = () => {
 					slidesToShow: 2,
 					slidesToScroll: 2,
 					initialSlide: 2,
+					swipeToSlide: true,
 				},
 			},
 			{
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 1.1,
+					initialSlide: 0,
 					slidesToScroll: 1,
+					touchThreshold: 10,
+					swipeToSlide: true,
+					arrows: false,
 				},
 			},
 		],
 	};
 	return (
 		<div>
-			<h2 className="text-[5rem] uppercase my-3 ">Top sales</h2>
+			<h2 className="text-[3rem] md:text-[5rem] uppercase my-3 ">Top sales</h2>
 
-			<Slider {...settings}>
+			<Slider {...settings} className="pl-1 md:pl-0">
 				{products.map(
 					(productItem) =>
 						productItem.toppick && (

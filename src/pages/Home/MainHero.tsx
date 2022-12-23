@@ -3,6 +3,7 @@ import RoundButton from "../../components/RoundButton";
 import hero1 from "../../assets/deji-akinyele-ARm28szwP0o-unsplash.webp";
 import hero2 from "../../assets/alexander-jawfox-GNd5gstTSg8-unsplash.webp";
 import { BsArrowDown } from "react-icons/bs";
+// import { HiArrowLongDown } from "react-icons/hi";
 import { FC } from "react";
 import { motion, Variants, HTMLMotionProps } from "framer-motion";
 import { getProducts } from "../../features/api/product.api";
@@ -55,7 +56,7 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 	//
 	return (
 		<div>
-			<div className="relative top-5 flex justify-between items-start text-[7rem]">
+			<div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[3.1rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-widest font-black">
 				<motion.h2
 					className="overflow-hidden h-fit py-0 leading-none"
 					variants={container}
@@ -72,13 +73,13 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 						</motion.span>
 					))}
 				</motion.h2>
-				<div className="flex flex-col items-end gap-5">
+				<div className="flex flex-col items-start md:items-end gap-2 md:gap-5">
 					<span className="flex justify-center items-center">
 						<Link to="/products">
 							<RoundButton
 								onClick={getProducts}
 								children="view more"
-								extraclasses="font-Hmid px-4 py-2 w-fit text-[0.8rem] font-bold uppercase"
+								extraclasses="font-Hmid px-2 md:px-4 py-2 mr-2 whitespace-nowrap text-[0.6rem] md:text-[0.8rem] font-bold uppercase tracking-normal"
 							/>
 						</Link>
 						<motion.h2
@@ -116,21 +117,36 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 					</motion.h2>
 				</div>
 			</div>
-			<div className="grid grid-cols-3 gap-3 h-full items-end">
-				<div className="h-[75vh]">
-					<img src={hero1} alt="hero1" className="h-full w-full object-cover" />
+			<div className="relative md:-top-14 grid md:grid-cols-7 gap-2 items-end">
+				<div className="flex items-end gap-2 md:col-span-4 w-full">
+					<div className="h-[50vh] md:h-[70vh] w-fit">
+						<img
+							src={hero1}
+							alt="hero1"
+							className="h-full w-full md:w-[30vw] object-cover"
+						/>
+					</div>
+					<div className="h-[35vh] md:h-[55vh] w-fit">
+						<img
+							src={hero2}
+							alt="hero2"
+							className="h-full w-full md:w-[25vw] object-cover"
+						/>
+					</div>
 				</div>
-				<div className="h-[65vh]">
-					<img src={hero2} alt="hero2" className="h-full w-full object-cover" />
-				</div>
-				<div className="relative h-[65vh] text-sm">
+				<div className="flex flex-col justify-between items-center md:items-start md:col-span-3 h-[30vh] md:h-[55vh] text-sm text-justify w-full">
 					<h2>
 						The brand was originally aimed at men's fashion.In 1985 all women's
-						fashion were launched;from casual to the most urban{" "}
+						fashion were launched in all its dimensions;from casual to the most
+						urban{" "}
 					</h2>
-					<div className="absolute bottom-0 bg-transparent fill-white border-[0.5px] border-secondary w-max p-7 rounded-full overflow-hidden">
+					<div className="flex items-center justify-center bg-transparent fill-white border-[0.5px] border-secondary w-[5rem] h-[5rem] rounded-full overflow-hidden">
 						<motion.span>
 							<BsArrowDown />
+
+							{/* <div>
+								<HiArrowLongDown />
+							</div> */}
 						</motion.span>
 					</div>
 				</div>

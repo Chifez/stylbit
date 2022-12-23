@@ -1,4 +1,3 @@
-import React from "react";
 import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 
@@ -6,14 +5,14 @@ const Footer = () => {
 	return (
 		<div className="p-3 text-center capitalize">
 			<footer className="py-5">
-				<div className="flex justify-around items-start my-5">
-					<div className="flex flex-col justify-start items-start">
+				<div className="flex flex-col md:flex-row gap-2 justify-around items-start my-5">
+					<div className="flex flex-col justify-start items-start my-2">
 						<h2 className="text-[1.5rem] uppercase mb-2">faloni</h2>
 						<p>fashion styling in simplicity</p>
 						<p>Call Us : +23412345678</p>
 						<p>send a mail : faloni@fashion.style</p>
 					</div>
-					<div className="flex flex-col capitalize">
+					<div className="flex flex-col justify-start items-start capitalize my-2">
 						<a href="/" className="my-2">
 							<h2>products</h2>
 						</a>
@@ -27,7 +26,7 @@ const Footer = () => {
 							Discounts
 						</a>
 					</div>
-					<div className="flex flex-col capitalize">
+					<div className="flex flex-col justify-start items-start capitalize my-2">
 						<a href="/" className="my-2">
 							<h2>careers</h2>
 						</a>
@@ -38,7 +37,7 @@ const Footer = () => {
 							Blogs
 						</a>
 					</div>
-					<div className="flex flex-col capitalize">
+					<div className="flex flex-col justify-start items-start capitalize my-2">
 						<a href="/" className="my-2">
 							<h2>FAQ</h2>
 						</a>
