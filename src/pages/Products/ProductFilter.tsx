@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsFilterLeft } from "react-icons/bs";
 import InputForm from "../../components/InputInfo";
 import SelectInput from "../../components/SelectFilter";
 import {
@@ -8,36 +8,62 @@ import {
 	getWomenProducts,
 } from "../../features/api/product.api";
 
+const categoryOptions = {
+	optionId: "category",
+	options: [
+		{ title: "Men's wear", getCategory: getMensProducts },
+		{ title: "Female's wear", getCategory: getWomenProducts },
+	],
+};
+const sortOptions = {
+	optionId: "sortby",
+	options: [{ title: "PRICE" }, { title: "A-Z" }, { title: "Z-A" }],
+};
+const languageOptions = {
+	optionId: "Language",
+	options: [{ title: "EN" }, { title: "ESP" }],
+};
+
 const ProductFilter = () => {
 	const [searchInput, setSearchInput] = useState<string>("");
 
-	const categoryOptions = {
-		optionId: "category",
-		options: [
-			{ title: "Men's wear", getCategory: getMensProducts },
-			{ title: "Female's wear", getCategory: getWomenProducts },
-		],
-	};
-	const sortOptions = {
-		optionId: "sortby",
-		options: [{ title: "PRICE" }, { title: "A-Z" }, { title: "Z-A" }],
-	};
-	const languageOptions = {
-		optionId: "Language",
-		options: [{ title: "EN" }, { title: "ESP" }],
-	};
+	return (
+		<>
+			<div className="hidden md:block">
+				<DesktopProductFilter
+					searchInput={searchInput}
+					setSearchInput={setSearchInput}
+				/>
+			</div>
+			<div className="block md:hidden">
+				<MobileProductFilter
+					searchInput={searchInput}
+					setSearchInput={setSearchInput}
+				/>
+			</div>
+		</>
+	);
+};
+
+const DesktopProductFilter = ({
+	searchInput,
+	setSearchInput,
+}: {
+	searchInput: string;
+	setSearchInput: (e: string) => void;
+}) => {
 	return (
 		<div className="flex justify-between">
 			<SelectInput
 				Options={categoryOptions}
 				initialstate="--select category--"
-				extraclass="w-[11rem] px-1"
+				extraclass="w-[11rem] p-2"
 			/>
 			<div className="relative flex items-center justify-between gap-1 px-2 border">
 				<input
 					type="text"
 					placeholder="Search keyword"
-					className="flex-1 outline-none bg-transparent"
+					className="flex-1 outline-none bg-transparent p-2"
 					onChange={(e) => setSearchInput(e.target.value)}
 				/>
 				<BsSearch
@@ -49,12 +75,38 @@ const ProductFilter = () => {
 				<SelectInput
 					Options={sortOptions}
 					initialstate="--sort products--"
-					extraclass="w-[10rem] px-1"
+					extraclass="w-[10rem] p-2"
 				/>
 				<SelectInput
 					Options={languageOptions}
 					initialstate={languageOptions.options[0].title}
-					extraclass="w-20 px-1"
+					extraclass="w-20 p-2"
+				/>
+			</div>
+		</div>
+	);
+};
+
+const MobileProductFilter = ({
+	searchInput,
+	setSearchInput,
+}: {
+	searchInput: string;
+	setSearchInput: (e: string) => void;
+}) => {
+	return (
+		<div className="flex justify-between items-center gap-2">
+			<BsFilterLeft className="w-10 h-10 border border-secondary" />
+			<div className="flex-1 flex items-center justify-between gap-1 px-2 border">
+				<input
+					type="text"
+					placeholder="Search keyword"
+					className="flex-1 outline-none bg-transparent p-2"
+					onChange={(e) => setSearchInput(e.target.value)}
+				/>
+				<BsSearch
+					className=" fill-white"
+					onClick={() => searchProducts(searchInput)}
 				/>
 			</div>
 		</div>

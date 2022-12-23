@@ -8,9 +8,9 @@ const RoundButton = (props: {
 	return (
 		<div
 			onClick={props.onClick}
-			className={`${props.extraclasses} bg-white text-black text-sm text-center rounded-full cursor-pointer`}
+			className={` bg-white text-black text-sm text-center rounded-full cursor-pointer ${props.extraclasses}`}
 		>
-			{props.children}
+			<div>{props.children}</div>
 		</div>
 	);
 };

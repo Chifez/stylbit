@@ -143,7 +143,6 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 					<div className="flex items-center justify-center bg-transparent fill-white border-[0.5px] border-secondary w-[5rem] h-[5rem] rounded-full overflow-hidden">
 						<motion.span>
 							<BsArrowDown />
-
 							{/* <div>
 								<HiArrowLongDown />
 							</div> */}

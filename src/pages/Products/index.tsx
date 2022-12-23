@@ -5,12 +5,12 @@ import ProductsList from "./ProductsList";
 
 const Products = () => {
 	return (
-		<Layout>
-			<div className="px-5">
+		<div className="px-4 md:px-8  bg-primary text-white">
+			<Layout>
 				<ProductFilter />
 				<ProductsList />
-			</div>
-		</Layout>
+			</Layout>
+		</div>
 	);
 };
 

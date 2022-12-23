@@ -10,7 +10,7 @@ import { product } from "../../Data/Types";
 const MainProducts = () => {
 	const settings = {
 		dots: false,
-		infinite: true,
+		infinite: false,
 		speed: 500,
 		slidesToShow: 3,
 		swipeToSlide: true,
@@ -22,7 +22,7 @@ const MainProducts = () => {
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 3,
-					infinite: true,
+					infinite: false,
 					dots: true,
 				},
 			},
@@ -31,7 +31,7 @@ const MainProducts = () => {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
-					initialSlide: 2,
+					initialSlide: 0,
 					swipeToSlide: true,
 				},
 			},
