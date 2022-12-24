@@ -11,12 +11,12 @@ const PreviewPage = (props: { products: product }) => {
 		props.products;
 	const dispatch = useAppDispatch();
 	return (
-		<div className="grid grid-cols-3 px-20 gap-5">
-			<span className="grid col-span-1 gap-3">
+		<div className="grid grid-cols-1 md:grid-cols-3 px-2 md:px-10 md:gap-5">
+			<span className="grid md:col-span-1 gap-3">
 				<img
 					src={image}
 					alt="imageitem"
-					className=" w-[25rem] h-[28rem] object-cover"
+					className="w-full h-[40vh] md:w-[25rem] md:h-[28rem] object-cover"
 				/>
 
 				<div className="grid grid-cols-3 gap-3">
@@ -25,7 +25,7 @@ const PreviewPage = (props: { products: product }) => {
 					<img src={image} alt="imageitem" />
 				</div>
 			</span>
-			<div className="col-span-2 py-20">
+			<div className="md:col-span-2 py-5 md:py-20">
 				<h2 className="font-semibold text-[1.2rem] capitalize">{name}</h2>
 				<span className="flex items-center gap-3 text-[0.8rem] py-2">
 					<p className="text-secondary">${oldprice}</p>
@@ -39,8 +39,8 @@ const PreviewPage = (props: { products: product }) => {
 						<p className="text-[crimson] line-through">instock</p>
 					)}
 				</div>
-				<p className="py-2 w-[70%]">{fulldesc}</p>
-				<div className="flex items-center py-2">
+				<p className="py-2 w-full text-justify md:w-[70%]">{fulldesc}</p>
+				<div className="flex items-center gap-1 py-2">
 					<label htmlFor="qty">Qty:</label>
 					<span className="relative">
 						<input
@@ -48,7 +48,7 @@ const PreviewPage = (props: { products: product }) => {
 							name="qty"
 							min="1"
 							defaultValue="1"
-							className="w-14 h-8 outline-none border text-center bg-transparent text-white"
+							className="w-16 h-9 outline-none border text-center bg-transparent text-white"
 							onChange={(e) => setInput(parseInt(e.target.value))}
 						/>
 						<div className="absolute top-[15%] right-1">
@@ -58,7 +58,7 @@ const PreviewPage = (props: { products: product }) => {
 					</span>
 					<RoundButton
 						children="ADD TO CART"
-						extraclasses="px-5 py-2 rounded-none font-semibold cursor-pointer bg-[green] text-[white]"
+						extraclasses="px-5 py-2 rounded-sm font-bold cursor-pointer bg-secondary border border-secondary text-primary hover:bg-primary hover:text-secondary "
 						onClick={() =>
 							dispatch(
 								addToCart({

@@ -9,15 +9,17 @@ const Preview = () => {
 	const { id } = useParams();
 
 	return (
-		<Layout>
-			<div>
-				{products
-					.filter((preview) => preview.id === id)
-					.map((products) => (
-						<PreviewPage products={products} key={products.id} />
-					))}
-			</div>
-		</Layout>
+		<div className="px-4 bg-primary text-secondary">
+			<Layout>
+				<div>
+					{products
+						.filter((preview) => preview.id === id)
+						.map((products) => (
+							<PreviewPage products={products} key={products.id} />
+						))}
+				</div>
+			</Layout>
+		</div>
 	);
 };
 
