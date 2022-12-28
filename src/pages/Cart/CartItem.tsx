@@ -23,7 +23,7 @@ const CartItem = (props: { item: cartItem }) => {
 	const { id, image, name, desc, newprice, quantity } = props.item;
 	const dispatch = useAppDispatch();
 	return (
-		<div className="grid grid-cols-3 my-5 place-items-center">
+		<div className="grid grid-rows-2 md:grid-cols-3 my-5 place-items-center">
 			<div className="flex col-span-1 items-center gap-3">
 				<Link to={`/product/preview/${id}`}>
 					<img src={image} alt="image1" className="w-16 h-16 object-cover" />
@@ -37,7 +37,42 @@ const CartItem = (props: { item: cartItem }) => {
 					onClick={() => dispatch(removeItem({ id }))}
 				/>
 			</div>
-			<div className="flex items-center col-span-1">
+			<div className="flex justify-between w-full md:hidden">
+				<CartPricing
+					quantity={quantity}
+					id={id}
+					newprice={newprice}
+					dispatch={dispatch}
+					extraclass="flex"
+				/>
+			</div>
+			<CartPricing
+				quantity={quantity}
+				id={id}
+				newprice={newprice}
+				dispatch={dispatch}
+				extraclass="hidden md:flex"
+			/>
+		</div>
+	);
+};
+
+const CartPricing = ({
+	quantity,
+	id,
+	newprice,
+	dispatch,
+	extraclass,
+}: {
+	quantity: number;
+	id: string;
+	newprice: number;
+	dispatch: (e: any) => void;
+	extraclass: string;
+}) => {
+	return (
+		<>
+			<div className={`${extraclass} items-center col-span-1`}>
 				<RoundButton
 					children="+"
 					extraclasses="w-5 h-5"
@@ -50,10 +85,10 @@ const CartItem = (props: { item: cartItem }) => {
 					onClick={() => dispatch(decrementQuantity({ id, quantity }))}
 				/>
 			</div>
-			<div className="flex items-center border col-span-1">
+			<div className={`${extraclass} items-center border col-span-1`}>
 				<span className="px-2">${quantity * newprice}</span>
 			</div>
-		</div>
+		</>
 	);
 };
 
