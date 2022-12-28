@@ -7,21 +7,20 @@ const SignInForm = () => {
 	return (
 		<div className="relative flex flex-col justify-center items-center h-screen">
 			<AuthNavBar />
-			<form className="flex flex-col p-10 rounded-xl shadow-2xl gap-2 w-[32vw]">
+			<form className="flex flex-col p-5 md:p-10 rounded-xl md:shadow-2xl gap-2 w-full md:w-[32vw]">
 				<h2 className="text-center font-semibold capitalize">Sign in</h2>
 				<div className="flex flex-col gap-5">
 					<InputForm
 						label="Email"
 						type="text"
 						placeholder="Email"
-						className="flex-1 p-1 bg-transparent outline-none"
+						className="flex-1 px-1 py-2 bg-transparent outline-none"
 					/>
-
 					<InputForm
 						type="password"
 						label="password"
 						placeholder="Password"
-						className="flex-1 outline-none p-1 bg-transparent"
+						className="flex-1 outline-none px-1 py-2 bg-transparent"
 					/>
 				</div>
 

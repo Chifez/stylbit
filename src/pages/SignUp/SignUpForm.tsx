@@ -7,20 +7,20 @@ const SignUpForm = () => {
 	return (
 		<div className="relative flex flex-col justify-center items-center h-screen">
 			<AuthNavBar />
-			<form className="flex flex-col p-10 shadow-xl w-[32vw] gap-2">
+			<form className="flex flex-col p-5 md:p-10 md:shadow-xl w-full md:w-[32vw] gap-2">
 				<h2 className="text-center font-semibold">Create New Account</h2>
 				<div className="flex flex-col gap-5">
 					<InputForm
 						label="name"
 						type="text"
 						placeholder="Name"
-						className="flex-1 p-1 rounded-sm bg-transparent"
+						className="flex-1 px-1 py-2 rounded-sm bg-transparent"
 					/>
 					<InputForm
 						label="Email"
 						type="text"
 						placeholder="Email"
-						className="flex-1 p-1 rounded-sm bg-transparent"
+						className="flex-1 px-1 py-2 rounded-sm bg-transparent"
 					/>
 					<div className="flex flex-row items-start gap-2 w-full">
 						<InputForm

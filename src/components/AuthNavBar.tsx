@@ -8,14 +8,14 @@ const AuthNavBar = () => {
 			<Link to="/" className="absolute top-2 left-5 text-Hlight text-[1.2rem]">
 				Faloni
 			</Link>
-			<div className=" flex absolute top-2 right-5">
-				<Link to="/" className="flex items-center mx-2">
-					{" "}
-					<FaHome /> home
+			<div className="flex absolute top-3 right-5">
+				<Link to="/" className="flex items-baseline gap-1 mx-2 ">
+					<FaHome />
+					<p className="leading-[0px]">Home</p>
 				</Link>
-				<Link to="/cart" className="flex items-center mx-2">
+				<Link to="/cart" className="flex items-baseline gap-1 mx-2">
 					<FaShoppingCart />
-					back to cart
+					<p className="leading-[0px]">Back to cart</p>
 				</Link>
 			</div>
 		</>

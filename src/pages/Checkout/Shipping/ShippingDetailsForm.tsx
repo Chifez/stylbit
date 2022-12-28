@@ -18,7 +18,7 @@ const ShippingDetailsForm = () => {
 	return (
 		<div className="relative flex flex-col justify-center items-center h-screen">
 			<AuthNavBar />
-			<form className="flex flex-col gap-5 p-10 shadow-xl w-[40%]">
+			<form className="flex flex-col gap-5 p-10 shadow-xl w-full md:w-[40%]">
 				<h2 className="text-center font-semibold">Shipping Details</h2>
 				<div className="flex gap-2 w-full">
 					<InputForm
