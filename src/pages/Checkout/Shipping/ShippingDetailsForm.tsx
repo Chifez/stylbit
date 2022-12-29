@@ -18,20 +18,20 @@ const ShippingDetailsForm = () => {
 	return (
 		<div className="relative flex flex-col justify-center items-center h-screen">
 			<AuthNavBar />
-			<form className="flex flex-col gap-5 p-10 shadow-xl w-full md:w-[40%]">
+			<form className="flex flex-col gap-5 p-5 md:p-10 shadow-xl w-full md:w-[40%]">
 				<h2 className="text-center font-semibold">Shipping Details</h2>
-				<div className="flex gap-2 w-full">
+				<div className="flex flex-col md:flex-row gap-4 md:gap-2 w-full">
 					<InputForm
 						label="full name"
 						type="text"
 						placeholder="full name"
-						className="p-1 w-full rounded-sm  bg-transparent"
+						className="p-1 w-full rounded-sm bg-transparent"
 					/>
-					<div className="flex flex-row items-center w-[60%] ">
+					<div className="flex flex-row items-center w-full md:w-[60%] ">
 						<SelectInput
 							Options={phonecode}
 							initialstate="234"
-							extraclass="p-1 w-[4rem] border-secondary"
+							extraclass="p-1 w-[4rem]  border-secondary border-r-transparent"
 						/>
 						<InputForm
 							label="phone number"
@@ -41,18 +41,17 @@ const ShippingDetailsForm = () => {
 						/>
 					</div>
 				</div>
-				<div className="flex gap-2 ">
+				<div className="flex gap-2 w-full ">
+					<SelectInput
+						Options={state}
+						initialstate="Lagos"
+						extraclass="p-1 w-[6rem] md:w-[7rem] border-secondary"
+					/>
 					<InputForm
 						label="city"
 						type="text"
 						placeholder="city"
 						className="p-1 rounded-sm bg-transparent"
-					/>
-
-					<SelectInput
-						Options={state}
-						initialstate="Lagos"
-						extraclass="p-1 w-[10rem] border-secondary"
 					/>
 				</div>
 				<div className="flex gap-2 w-full">
@@ -60,7 +59,7 @@ const ShippingDetailsForm = () => {
 						label="Address"
 						type="text"
 						placeholder="Address"
-						className="p-1 w-[20rem] rounded-sm bg-transparent"
+						className="p-1 w-[12rem] md:w-[20rem] rounded-sm bg-transparent"
 					/>
 					<InputForm
 						label="zip code"

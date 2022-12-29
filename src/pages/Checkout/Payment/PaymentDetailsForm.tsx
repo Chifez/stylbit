@@ -32,9 +32,9 @@ const PaymentDetailsForm = () => {
 	};
 
 	return (
-		<div className="relative grid place-items-center col-span-2 border-r border-[#d8bebe] my-2">
+		<div className="relative grid place-items-center row-span-1 md:col-span-2 md:border-r border-[#d8bebe] my-2 w-screen md:w-full">
 			<AuthNavBar />
-			<form className="flex flex-col p-5 gap-5 shadow-xl">
+			<form className="flex flex-col p-5 gap-5 shadow-xl mt-20 md:mt-0 w-screen md:w-fit">
 				<h2 className="text-center font-semibold">Card Details</h2>
 				<span className="flex flex-col">
 					<InputForm
@@ -52,7 +52,7 @@ const PaymentDetailsForm = () => {
 						className="p-1 bg-transparent rounded-sm px-2 outline-none"
 					/>
 				</span>
-				<span className="flex gap-2 items-end justify-center">
+				<span className="flex gap-2 items-end justify-start md:justify-center">
 					<span>
 						<label htmlFor="expiration date">Expiration Date</label>
 						<span className="flex gap-5 bg-transparent rounded-sm outline-none">
@@ -73,12 +73,12 @@ const PaymentDetailsForm = () => {
 							label="CVV"
 							type="text"
 							placeholder="CVV"
-							className="p-1 bg-transparent accent-[red] rounded-sm px-2 outline-none"
+							className="p-1 bg-transparent  w-full rounded-sm px-2 outline-none"
 						/>
 					</span>
 				</span>
 				<span className="flex items-center gap-2">
-					<input type="checkbox" />
+					<input type="checkbox" className="accent-secondary" />
 					<p>Remember this details</p>
 				</span>
 				<div className="flex gap-3">

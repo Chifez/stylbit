@@ -4,7 +4,7 @@ import CheckoutSummary from "./CheckoutSummary";
 
 const Checkout = () => {
 	return (
-		<div className="bg-primary min-h-screen grid grid-cols-3 text-white">
+		<div className="bg-primary min-h-screen grid md:grid-cols-3 text-white">
 			<PaymentDetailsForm />
 			<CheckoutSummary />
 		</div>
