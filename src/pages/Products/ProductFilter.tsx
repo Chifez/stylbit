@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BsSearch, BsFilterLeft } from "react-icons/bs";
+import { IoMdClose } from "react-icons/io";
 import InputForm from "../../components/InputInfo";
 import SelectInput from "../../components/SelectFilter";
 import {
@@ -59,7 +60,7 @@ const DesktopProductFilter = ({
 				initialstate="--select category--"
 				extraclass="w-[11rem] p-2"
 			/>
-			<div className="relative flex items-center justify-between gap-1 px-2 border">
+			<div className="flex items-center justify-between gap-1 px-2 border">
 				<input
 					type="text"
 					placeholder="Search keyword"
@@ -94,10 +95,14 @@ const MobileProductFilter = ({
 	searchInput: string;
 	setSearchInput: (e: string) => void;
 }) => {
+	const [isOpen, setIsOpen] = useState<boolean>(false);
 	return (
-		<div className="flex justify-between items-center gap-2">
-			<BsFilterLeft className="w-10 h-10 border border-secondary" />
-			<div className="flex-1 flex items-center justify-between gap-1 px-2 border">
+		<div className="relative flex justify-between items-center gap-2">
+			<BsFilterLeft
+				className="w-10 h-10 border"
+				onClick={() => setIsOpen(!isOpen)}
+			/>
+			<div className=" flex-1 flex items-center justify-between gap-1 px-2 border">
 				<input
 					type="text"
 					placeholder="Search keyword"
@@ -109,7 +114,45 @@ const MobileProductFilter = ({
 					onClick={() => searchProducts(searchInput)}
 				/>
 			</div>
+			<div
+				className={`absolute top-full p-2 ${
+					isOpen
+						? "-translate-x-[4vw] transition-all"
+						: "-translate-x-[100vw] transition-all"
+				} bg-primary `}
+			>
+				<FilterSlider setIsOpen={setIsOpen} />
+			</div>
 		</div>
+	);
+};
+
+const FilterSlider = ({ setIsOpen }: { setIsOpen: (e: boolean) => void }) => {
+	return (
+		<>
+			<IoMdClose
+				onClick={() => setIsOpen(false)}
+				className="absolute right-0 top-1 h-9 w-9"
+			/>
+			<div className={`flex flex-col justify-around p-2 w-[80vw] h-[50vh]`}>
+				<SelectInput
+					Options={categoryOptions}
+					initialstate="--select category--"
+					extraclass="w-[11rem] p-2"
+				/>
+
+				<SelectInput
+					Options={sortOptions}
+					initialstate="--sort products--"
+					extraclass="w-[10rem] p-2"
+				/>
+				<SelectInput
+					Options={languageOptions}
+					initialstate={languageOptions.options[0].title}
+					extraclass="w-20 p-2"
+				/>
+			</div>
+		</>
 	);
 };
 
