@@ -91,3 +91,11 @@ export const searchProducts = async (product: string) => {
 	const searchResults = await productApi.get(`/products/search?q=${product}`);
 	console.log(searchResults);
 };
+
+export const fetchProduct = (argument: string) => {
+	if (argument === "allproducts") {
+		return getProducts;
+	} else if (argument === "mensproducts") {
+		return getMensProducts;
+	} else return getWomenProducts;
+};

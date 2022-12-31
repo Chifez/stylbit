@@ -5,7 +5,12 @@ import { product } from "../../Data/Types";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import ReactPaginate from "react-paginate";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../../features/api/product.api";
+import {
+	getProducts,
+	getMensProducts,
+	fetchProduct,
+} from "../../features/api/product.api";
+import { useAppSelector } from "../../app/hooks";
 
 const ProductsList = () => {
 	const [currentItems, setCurrentItems] = useState<product[]>([]);
@@ -13,9 +18,14 @@ const ProductsList = () => {
 	const [itemOffset, setItemOffset] = useState(0);
 	const itemsPerPage = 9;
 
-	// const {data,isLoading,error,isError} = useQuery({queryKey:['products'], queryFn:getProducts});
+	const getprodAPi = useAppSelector((state) => state?.reducertwo.getApi);
+	const { data, isLoading, error, isError } = useQuery({
+		queryKey: ["products"],
+		queryFn: getProducts,
+	});
 
 	useEffect(() => {
+		console.log(data);
 		const endOffset = itemOffset + itemsPerPage;
 		setCurrentItems(products.slice(itemOffset, endOffset));
 		setPageCount(Math.ceil(products.length / itemsPerPage));

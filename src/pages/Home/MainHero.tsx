@@ -6,7 +6,10 @@ import { BsArrowDown } from "react-icons/bs";
 // import { HiArrowLongDown } from "react-icons/hi";
 import { FC } from "react";
 import { motion, Variants, HTMLMotionProps } from "framer-motion";
-import { getProducts } from "../../features/api/product.api";
+// import { getProducts } from "../../features/api/product.api";
+import { useAppDispatch } from "../../app/hooks";
+import { getProduct } from "../../app/apiSlice";
+import { fetchProduct, getMensProducts } from "../../features/api/product.api";
 
 interface Props extends HTMLMotionProps<"div"> {
 	delay?: number;
@@ -53,6 +56,8 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 		},
 	};
 
+	const dispatch = useAppDispatch();
+
 	//
 	return (
 		<div>
@@ -77,7 +82,7 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 					<span className="flex justify-center items-center">
 						<Link to="/products">
 							<RoundButton
-								onClick={getProducts}
+								onClick={() => dispatch(getProduct({ getApi: "allproducts" }))}
 								children="view more"
 								extraclasses="font-Hmid px-2 md:px-4 py-2 mr-2 whitespace-nowrap text-[0.6rem] md:text-[0.8rem] font-bold uppercase tracking-normal"
 							/>
