@@ -21,3 +21,9 @@
 	font-family: "Hblack";
 	src: url("./assets/fonts/HelveticaNeueCyr-Black.otf");
 }
+
+@layer utilities {
+	.hover {
+		@apply flex bg-[length:300%] bg-gradient-to-r from-transparent to-white hover:bg-[center_top_-100%] transition-all;
+	}
+}

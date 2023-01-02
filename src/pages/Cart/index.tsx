@@ -13,8 +13,13 @@ const Cart = () => {
 		<div className="px-4 md:px-8 bg-primary">
 			<Layout>
 				{products.length === 0 && (
-					<div className="flex items-center justify-center w-screen h-screen">
+					<div className="flex flex-col gap-2 items-center justify-center w-screen h-screen">
 						<p>EMPTY CART</p>
+						<Link to="cart" className="hover">
+							<div className="border uppercase py-1 px-2 rounded-sm">
+								continue shopping
+							</div>
+						</Link>
 					</div>
 				)}
 				{products.length >= 1 && (
@@ -39,7 +44,7 @@ const Cart = () => {
 						</div>
 						<span className="flex justify-center py-5">
 							<Link to="/signin">
-								<button className="text-center font-semibold border border-transparent rounded-md px-10 p-1 bg-[green] hover:bg-transparent hover:border-inherit">
+								<button className="text-center font-semibold border border-transparent rounded-md px-10 p-1 bg-white text-primary hover:bg-transparent hover:border-inherit">
 									Checkout
 								</button>
 							</Link>

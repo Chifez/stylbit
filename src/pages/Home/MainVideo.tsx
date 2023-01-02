@@ -1,11 +1,9 @@
-import React from "react";
-
 const MainVideo = () => {
-	const player = "../../assets/Fashion_video.mp4";
+	const player = "videos/Fashion_video.mp4";
 	return (
 		<div>
-			<video>
-				<source src={player} />
+			<video controls width="100%" height="70%">
+				<source src={player} type="video/mp4" />
 			</video>
 		</div>
 	);
