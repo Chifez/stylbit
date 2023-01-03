@@ -25,7 +25,7 @@ const MainVideo = () => {
 	};
 
 	// useEffect(() => {
-	// 	handlePlay();
+	// 	VideoRef.current && (VideoRef.current.defaultMuted = true);
 	// }, []);
 	return (
 		<div className="relative">
@@ -37,14 +37,20 @@ const MainVideo = () => {
 				{isVideoPlaying.playing ? "pause" : "play"} video
 			</button>
 
-			<video loop poster={posterpic} width="100%" height="70%" ref={VideoRef}>
+			<video
+				loop
+				// muted={true}
+				playsInline
+				poster={posterpic}
+				width="100%"
+				height="70%"
+				ref={VideoRef}
+			>
 				<source src={player} type="video/mp4" />
+				your browser does not support the video tag
 			</video>
 		</div>
 	);
 };
 
 export default MainVideo;
-function elseif(arg0: boolean) {
-	throw new Error("Function not implemented.");
-}
