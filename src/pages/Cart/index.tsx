@@ -15,8 +15,8 @@ const Cart = () => {
 				{products.length === 0 && (
 					<div className="flex flex-col gap-2 items-center justify-center w-screen h-screen">
 						<p>EMPTY CART</p>
-						<Link to="cart" className="hover">
-							<div className="border uppercase py-1 px-2 rounded-sm">
+						<Link to="cart">
+							<div className="hover font-Hmid border uppercase py-1 px-2 rounded-sm">
 								continue shopping
 							</div>
 						</Link>
