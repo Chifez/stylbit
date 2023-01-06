@@ -23,7 +23,7 @@ const CartItem = (props: { item: cartItem }) => {
 	const { id, image, name, desc, newprice, quantity } = props.item;
 	const dispatch = useAppDispatch();
 	return (
-		<div className="grid grid-rows-2 md:grid-cols-3 my-5 align-center place-items-center shadow-lg rounded-sm p-2">
+		<div className="grid grid-rows-2 md:grid-cols-3 my-5 place-items-center shadow-lg rounded-sm p-2">
 			<div className="flex col-span-1 items-center gap-3">
 				<Link to={`/product/preview/${id}`}>
 					<img src={image} alt="image1" className="w-16 h-16 object-cover" />

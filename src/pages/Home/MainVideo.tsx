@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 import posterpic from "../../assets/posterpic.png";
 
@@ -24,10 +24,6 @@ const MainVideo = () => {
 			VideoRef.current?.pause();
 		}
 	};
-
-	// useEffect(() => {
-	// 	VideoRef.current && (VideoRef.current.defaultMuted = true);
-	// }, []);
 	return (
 		<div className="relative my-5">
 			<button

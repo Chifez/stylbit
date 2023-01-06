@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import RoundButton from "./RoundButton";
-import { IoMdClose } from "react-icons/io";
+import MenuBar from "./MenuBar";
 import { useAppSelector } from "../app/hooks";
 
 const Header = () => {
@@ -40,31 +40,4 @@ const Header = () => {
 		</div>
 	);
 };
-
-const MenuBar = ({
-	setIsOpen,
-	isOpen,
-}: {
-	setIsOpen: (e: boolean) => void;
-	isOpen: boolean;
-}) => {
-	return (
-		<>
-			<IoMdClose
-				className="absolute right-5 top-2 w-8 h-8 md:w-10 md:h-10 cursor-pointer"
-				onClick={() => setIsOpen(!isOpen)}
-			/>
-			<div className="flex flex-col justify-center gap-20 items-center h-full w-full font-black text-2xl md:text-4xl text-secondary">
-				<h2>products</h2>
-				<h2>careers</h2>
-				<h2>About us</h2>
-				<span className="flex flex-row items-center justify-between gap-10">
-					<h2>sign In</h2>
-					<h2>sign Up</h2>
-				</span>
-			</div>
-		</>
-	);
-};
-
 export default Header;

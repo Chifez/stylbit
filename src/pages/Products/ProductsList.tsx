@@ -21,7 +21,7 @@ const ProductsList = () => {
 	const getprodAPi = useAppSelector((state) => state?.reducertwo.getApi);
 	const { data, isLoading, error, isError } = useQuery({
 		queryKey: ["products"],
-		queryFn: getProducts,
+		queryFn: fetchProduct(getprodAPi),
 	});
 
 	useEffect(() => {

@@ -1,15 +1,29 @@
 import RoundButton from "./RoundButton";
 import { product } from "../Data/Types";
 import { Link } from "react-router-dom";
-import { FaLink } from "react-icons/fa";
 import { HiPlus } from "react-icons/hi";
 import { useAppDispatch } from "../app/hooks";
 import { addToCart } from "../app/cartSlice";
+import { motion, transform } from "framer-motion";
 
 const ProductCard = (props: { productItem: product }) => {
 	const { id, image, name, newprice, oldprice, desc } = props.productItem;
 
 	const dispatch = useAppDispatch();
+
+	// const bounce = () => {
+	// 	return (
+
+	// 		const tranformer = transform(0,[
+	// 			"scale3d(1,1,1)",
+	// 			"scale3d(0.6,1.1,1)",
+	// 			"scale3d(1.3,0.9,1)",
+	// 			"scale3d(0.8,1.2,1)",
+	// 			"scale3d(1,1,1)",
+	// 		]),
+	// 	)
+
+	// };
 
 	return (
 		<div className="max-h-max max-w-max py-5 px-3">
@@ -31,13 +45,15 @@ const ProductCard = (props: { productItem: product }) => {
 						<p>${newprice}</p>
 					</span>
 				</div>
-				<RoundButton
-					children={<HiPlus />}
-					extraclasses="w-8 h-8 flex items-center justify-center mx-0"
-					onClick={() =>
-						dispatch(addToCart({ id, name, newprice, image, desc }))
-					}
-				/>
+				<motion.div whileTap={{ scale: 1.3 }}>
+					<RoundButton
+						children={<HiPlus />}
+						extraclasses="w-8 h-8 flex items-center justify-center mx-0"
+						onClick={() =>
+							dispatch(addToCart({ id, name, newprice, image, desc }))
+						}
+					/>
+				</motion.div>
 			</div>
 		</div>
 	);
