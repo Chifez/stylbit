@@ -4,8 +4,9 @@ import { HiMinus, HiPlus } from "react-icons/hi";
 import { product } from "../../Data/Types";
 import { useAppDispatch } from "../../app/hooks";
 import { addToCart } from "../../app/cartSlice";
+import { DocumentData } from "firebase/firestore";
 
-const PreviewPage = (props: { products: product }) => {
+const PreviewPage = (props: { products: DocumentData }) => {
 	const [input, setInput] = useState<number>(1);
 	const increaseQuantity = () => {
 		setInput((prev) => prev + 1);
