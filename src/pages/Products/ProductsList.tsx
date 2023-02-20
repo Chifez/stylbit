@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import ProductCard from "../../components/ProductCard";
-import { products } from "../../Data/itemData";
-import { product } from "../../Data/Types";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-import ReactPaginate from "react-paginate";
-import { collection, getDocs } from "firebase/firestore";
-import { getFirestore } from "firebase/firestore";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+// import { products } from "../../Data/itemData";
+// import { product } from "../../Data/Types";
+// import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+// import ReactPaginate from "react-paginate";
+// import { collection, getDocs } from "firebase/firestore";
+// import { getFirestore } from "firebase/firestore";
+// import { useQuery, useQueryClient } from "@tanstack/react-query";
 import useProdFetch from "../../hooks/useProdFetch";
 
 const ProductsList = () => {
-	const [currentItems, setCurrentItems] = useState<product[]>([]);
-	const [pageCount, setPageCount] = useState(0);
-	const [itemOffset, setItemOffset] = useState(0);
-	const itemsPerPage = 9;
+	// const [currentItems, setCurrentItems] = useState<product[]>([]);
+	// const [pageCount, setPageCount] = useState(0);
+	// const [itemOffset, setItemOffset] = useState(0);
+	// const itemsPerPage = 9;
 	const { fetchedProducts } = useProdFetch();
 	// const queryclient = useQueryClient();
 

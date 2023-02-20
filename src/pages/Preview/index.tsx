@@ -8,7 +8,7 @@ import useProdFetchId from "../../hooks/useProdFetchId";
 
 const Preview = () => {
 	const { id } = useParams();
-	const { fetchedProducts: products } = useProdFetchId(id);
+	const { fetchedProducts: products } = useProdFetchId("id",id);
 
 	return (
 		<div className="px-4 bg-primary text-secondary">

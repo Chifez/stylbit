@@ -6,8 +6,9 @@ import { HiPlus } from "react-icons/hi";
 import { useAppDispatch } from "../app/hooks";
 import { addToCart } from "../app/cartSlice";
 import { motion } from "framer-motion";
+import { DocumentData } from "firebase/firestore";
 
-const ProductCard = (props: { productItem: product }) => {
+const ProductCard = (props: { productItem: DocumentData | product }) => {
 	const { id, image, name, newprice, oldprice, desc } = props.productItem;
 	const [added, setAdded] = useState(false);
 	const [isVisible, setIsVisible] = useState(false);
@@ -55,19 +56,19 @@ const ProductCard = (props: { productItem: product }) => {
 					className="relative"
 				>
 					{isVisible && (
-						<motion.span
+						<motion.p
 							key={"button"}
 							animate={{
 								y: [-18, -22, -25, -30],
 								opacity: [1, 0.5, 0.25, 0],
 							}}
+							px-2
 							transition={{ duration: 0.5 }}
-							className="absolute cursor-pointer"
+							className="absolute cursor-pointer text-center"
 						>
 							added!
-						</motion.span>
+						</motion.p>
 					)}
-
 					<RoundButton
 						children={<HiPlus />}
 						extraclasses="w-8 h-8 flex items-center justify-center mx-0"

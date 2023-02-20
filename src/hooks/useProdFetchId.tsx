@@ -2,12 +2,12 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
-const useProdFetchId = (id: string | undefined) => {
+const useProdFetchId = (idType: string, id: string | boolean | undefined) => {
 	const queryclient = useQueryClient();
 
 	const db = getFirestore();
 	const getProduct = async () => {
-		const q = query(collection(db, "products"), where("id", "==", id));
+		const q = query(collection(db, "products"), where(idType, "==", id));
 		const querySnapshot = await getDocs(q);
 		console.log(querySnapshot.docs.map((doc) => doc.data()));
 		return querySnapshot.docs.map((doc) => doc.data());

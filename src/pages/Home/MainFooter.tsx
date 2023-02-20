@@ -33,7 +33,7 @@ const MainFooter = () => {
 			</div>
 			<div className="relative overflow-hidden w-full">
 				<h2 className="uppercase text-[1rem]">our brand partners</h2>
-				<motion.span
+				{/* <motion.span
 					variants={marque}
 					className="flex items-center justify-center gap-2 w-[90vw] overflow-hidden"
 				>
@@ -60,7 +60,7 @@ const MainFooter = () => {
 						<img src={lacoste} alt="brand" className="w-[100px] h-[100px]" />
 						<img src={chanel} alt="brand" className="w-[100px] h-[100px]" />
 					</motion.span>
-				</motion.span>
+				</motion.span> */}
 			</div>
 			<div>
 				<h2 className="uppercase text-[2rem] md:text-[4rem] font-bold tracking-wider">

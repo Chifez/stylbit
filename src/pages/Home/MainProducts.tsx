@@ -2,10 +2,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "../../components/ProductCard";
-import { products } from "../../Data/itemData";
-import { product } from "../../Data/Types";
+import { DocumentData } from "firebase/firestore";
+// import { products } from "../../Data/itemData";
+// import { product } from "../../Data/Types";
+// import useProdFetchId from "../../hooks/useProdFetchId";
 
-const MainProducts = () => {
+const MainProducts = (props: { product: DocumentData[] | undefined }) => {
 	const settings = {
 		dots: false,
 		infinite: false,
@@ -44,6 +46,8 @@ const MainProducts = () => {
 			},
 		],
 	};
+
+	const { product } = props;
 	return (
 		<div>
 			<div className="flex justify-center items-center gap-2 w-full ">
@@ -54,11 +58,12 @@ const MainProducts = () => {
 			</div>
 
 			<Slider {...settings} className="pl-1 md:pl-0">
-				{products.map(
-					(productItem) =>
-						productItem.toppick && (
-							<ProductCard key={productItem.id} productItem={productItem} />
-						)
+				{product?.map(
+					(productItem: DocumentData) => (
+						// productItem.toppick && (
+						<ProductCard key={productItem.id} productItem={productItem} />
+					)
+					// )
 				)}
 			</Slider>
 		</div>
