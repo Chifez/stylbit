@@ -52,7 +52,7 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 		},
 	};
 
-	// place the animation component in a seperate component
+	// TODO: place the animation component in a seperate component
 	return (
 		<div>
 			<div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[3.1rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-widest font-black">

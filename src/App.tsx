@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
+
 import Cart from "./pages/Cart";
 import { Routes, Route } from "react-router-dom";
 import SignIn from "./pages/SignIn";
@@ -15,46 +16,35 @@ import { ThreeDots } from "react-loader-spinner";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./firebase";
 import ProtectedRoutes from "./components/ProtectedRoutes";
-const Products = React.lazy(() => import("./pages/Products"));
+import Home from "./pages/Home";
+import Products from "./pages/Products";
 
 initializeApp(firebaseConfig);
 
 function App() {
 	return (
 		<div className="font-Hlight">
-			<Suspense
-				fallback={
-					<Loader
-						children={
-							<ThreeDots height="50" width="50" radius="9" color="white" />
-						}
-						baseStyle={"h-screen w-screen bg-primary"}
-						textStyle={"text-xl font-bold text-white"}
-					/>
-				}
-			>
-				<Routes>
-					<Route index element={<Home />} />
-					<Route path="/cart" element={<Cart />} />
-					<Route path="/products" element={<Products />} />
-					<Route path="/product/preview/:id" element={<Preview />} />
+			<Routes>
+				<Route index element={<Home />} />
+				<Route path="/cart" element={<Cart />} />
+				<Route path="/products" element={<Products />} />
+				<Route path="/product/preview/:id" element={<Preview />} />
 
-					<Route
-						path="/checkout"
-						element={<ProtectedRoutes children={<Shipping />} />}
-					/>
-					<Route
-						path="/checkout/payment"
-						element={<ProtectedRoutes children={<Checkout />} />}
-					/>
+				<Route
+					path="/checkout"
+					element={<ProtectedRoutes children={<Shipping />} />}
+				/>
+				<Route
+					path="/checkout/payment"
+					element={<ProtectedRoutes children={<Checkout />} />}
+				/>
 
-					<Route element={<Banner />}>
-						<Route path="/signin" element={<SignIn />} />
-						<Route path="/signup" element={<SignUp />} />
-					</Route>
-					<Route path="*" element={<Page404 />} />
-				</Routes>
-			</Suspense>
+				<Route element={<Banner />}>
+					<Route path="/signin" element={<SignIn />} />
+					<Route path="/signup" element={<SignUp />} />
+				</Route>
+				<Route path="*" element={<Page404 />} />
+			</Routes>
 		</div>
 	);
 }

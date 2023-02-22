@@ -2,12 +2,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "../../components/ProductCard";
-import { DocumentData } from "firebase/firestore";
 // import { products } from "../../Data/itemData";
 // import { product } from "../../Data/Types";
-// import useProdFetchId from "../../hooks/useProdFetchId";
+import useProdFetchId from "../../hooks/useProdFetchId";
+import Loader from "../../components/Loader";
+import { ThreeDots } from "react-loader-spinner";
 
-const MainProducts = (props: { product: DocumentData[] | undefined }) => {
+const MainProducts = () => {
 	const settings = {
 		dots: false,
 		infinite: false,
@@ -47,10 +48,13 @@ const MainProducts = (props: { product: DocumentData[] | undefined }) => {
 		],
 	};
 
-	const { product } = props;
+	const { fetchedProducts: products, isLoading } = useProdFetchId(
+		"toppick",
+		true
+	);
 	return (
 		<div>
-			<div className="flex justify-center items-center gap-2 w-full ">
+			<div className="flex justify-center items-center gap-2 w-full">
 				<h2 className="uppercase text-[2rem] md:text-[4rem] font-bold tracking-wider">
 					Top sales
 				</h2>
@@ -58,8 +62,17 @@ const MainProducts = (props: { product: DocumentData[] | undefined }) => {
 			</div>
 
 			<Slider {...settings} className="pl-1 md:pl-0">
-				{product?.map(
-					(productItem: DocumentData) => (
+				{isLoading && (
+					<Loader
+						children={
+							<ThreeDots height="50" width="50" radius="9" color="white" />
+						}
+						baseStyle={"h-[27rem] w-full bg-primary"}
+						textStyle={"text-xl font-bold text-white"}
+					/>
+				)}
+				{products?.map(
+					(productItem) => (
 						// productItem.toppick && (
 						<ProductCard key={productItem.id} productItem={productItem} />
 					)

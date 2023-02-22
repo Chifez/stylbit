@@ -15,6 +15,7 @@ const useProdFetchId = (idType: string, id: string | boolean | undefined) => {
 	const productQuery = useQuery({
 		queryKey: ["products"],
 		queryFn: getProduct,
+		staleTime: 300,
 	});
 
 	const { data: fetchedProducts, isLoading, isError, error } = productQuery;
