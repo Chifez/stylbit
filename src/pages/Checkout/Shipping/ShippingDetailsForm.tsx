@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import AuthNavBar from "../../../components/AuthNavBar";
 import InputForm from "../../../components/InputInfo";

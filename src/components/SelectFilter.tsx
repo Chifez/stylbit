@@ -40,7 +40,6 @@ const SelectInput = (props: {
 								setSelectedInput((e.target as HTMLInputElement).value);
 								setOpen(false);
 								item.getCategory && item.getCategory();
-								// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 							}}
 						>
 							{item.title}
@@ -53,24 +52,3 @@ const SelectInput = (props: {
 };
 
 export default SelectInput;
-
-{
-	/* <select
-	name={optionId}
-	className="border border-secondary p-1 bg-transparent rounded-sm outline-none capitalize"
->
-	{options.map((option, index) => (
-		<option
-			key={index}
-			value={option}
-			disabled={index === 0 ? true : false}
-			selected={index === 0 ? true : false}
-			hidden={index === 0 ? true : false}
-			className="bg-secondary capitalize"
-
-		>
-			{option}
-		</option>
-	))}
-</select> */
-}

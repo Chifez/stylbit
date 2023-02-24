@@ -2,8 +2,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "../../components/ProductCard";
-// import { products } from "../../Data/itemData";
-// import { product } from "../../Data/Types";
 import useProdFetchId from "../../hooks/useProdFetchId";
 import Loader from "../../components/Loader";
 import { ThreeDots } from "react-loader-spinner";

@@ -7,6 +7,13 @@ import { getTotal } from "../../../utils/GetTotal";
 const CheckoutSummary = () => {
 	const cart_summary = useAppSelector((state) => state?.cartReducer.cart);
 	const cart_total = getTotal(cart_summary).totalPrice;
+
+	const summaryData = [
+		{ title: "subtotal", value: cart_total },
+		{ title: "shipping", value: 20.0 },
+		{ title: "tax", value: 10.0 },
+		{ title: "total", value: cart_total + 20 + 10 },
+	];
 	return (
 		<div className="my-3 px-2">
 			<h2 className="font-semibold text-[1.2rem]">Order summary</h2>
@@ -22,10 +29,9 @@ const CheckoutSummary = () => {
 				))}
 			</div>
 			<div className="border-t-2 border-secondary pt-4">
-				<SummaryTotalCard title="subtotal" value={cart_total} />
-				<SummaryTotalCard title="shipping" value={20.0} />
-				<SummaryTotalCard title="tax" value={10.0} />
-				<SummaryTotalCard title="total" value={cart_total + 20 + 10} />
+				{summaryData.map((item, idx) => (
+					<SummaryTotalCard title={item.title} value={item.value} key={idx} />
+				))}
 			</div>
 		</div>
 	);

@@ -10,7 +10,6 @@ import { DocumentData } from "firebase/firestore";
 
 const ProductCard = (props: { productItem: DocumentData | product }) => {
 	const { id, image, name, newprice, oldprice, desc } = props.productItem;
-	const [added, setAdded] = useState(false);
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {

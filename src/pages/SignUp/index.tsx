@@ -2,11 +2,7 @@ import React from "react";
 import SignUpForm from "./SignUpForm";
 
 const SignUp = () => {
-	return (
-		<>
-			<SignUpForm />
-		</>
-	);
+	return <SignUpForm />;
 };
 
 export default SignUp;
