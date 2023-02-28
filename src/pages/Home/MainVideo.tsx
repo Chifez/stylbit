@@ -3,7 +3,8 @@ import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 import posterpic from "../../assets/posterpic.png";
 // import player from "videos/fashion.mp4";
 
-const player = "videos/fashion.mp4";
+const player =
+	"https://firebasestorage.googleapis.com/v0/b/faloni.appspot.com/o/video%2Ffashion.mp4?alt=media&token=37c509ba-7e8a-4b86-b75a-e74a64dc924f";
 
 const MainVideo = () => {
 	const [isVideoPlaying, setIsVideoPlaying] = useState({
