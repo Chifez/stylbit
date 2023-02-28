@@ -10,32 +10,12 @@ import { ThreeDots } from "react-loader-spinner";
 import CartModal from "../../components/CartModal";
 import useModal from "../../hooks/useModal";
 import { motion, AnimatePresence } from "framer-motion";
+import { scaleIn } from "../../utils/animations/scaleIn";
 
 const Preview = () => {
 	const { id } = useParams();
 	const { fetchedProducts: products, isLoading } = useProdFetchId("id", id);
 	const { isOpen, toggle } = useModal();
-
-	const scaleIn = {
-		hidden: {
-			scale: 0,
-			opacity: 0,
-		},
-		animate: {
-			scale: 1,
-			opacity: 1,
-			transition: {
-				duration: 0.2,
-			},
-		},
-		exit: {
-			scale: 0,
-			opacity: 0,
-			transition: {
-				duration: 0.2,
-			},
-		},
-	};
 
 	return (
 		<>

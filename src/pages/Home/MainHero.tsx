@@ -5,7 +5,7 @@ import hero2 from "../../assets/alexander-jawfox-GNd5gstTSg8-unsplash.webp";
 import { BsArrowDown } from "react-icons/bs";
 import { FC } from "react";
 import { motion, Variants, HTMLMotionProps } from "framer-motion";
-// import { getProducts } from "../../features/api/product.api";
+import { child } from "../../utils/animations/TextReveal";
 
 interface Props extends HTMLMotionProps<"div"> {
 	delay?: number;
@@ -17,8 +17,6 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 	const header2 = Array.from("FASHION");
 	const header3 = Array.from("COLLECTIONS");
 
-	//animations
-
 	const container: Variants = {
 		hidden: {},
 		visible: (i: number = 1) => ({
@@ -29,30 +27,6 @@ const MainHero: FC<Props> = ({ delay = 2, duration = 0.15 }: Props) => {
 		}),
 	};
 
-	const child: Variants = {
-		hidden: {
-			opacity: 0,
-			y: "100%",
-
-			transition: {
-				type: "spring",
-				damping: 50,
-				stiffness: 200,
-			},
-		},
-		visible: {
-			opacity: 1,
-			y: "0%",
-
-			transition: {
-				type: "spring",
-				damping: 50,
-				stiffness: 200,
-			},
-		},
-	};
-
-	// TODO: place the animation component in a seperate component
 	return (
 		<div>
 			<div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[3.1rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-widest font-black">

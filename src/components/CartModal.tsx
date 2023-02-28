@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence, animate } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MdClose } from "react-icons/md";
+import { scaleIn } from "../utils/animations/scaleIn";
 const CartModal = (props: { isOpen: boolean; toggle: () => void }) => {
 	const { isOpen, toggle } = props;
 	const navigate = useNavigate();
@@ -8,30 +9,14 @@ const CartModal = (props: { isOpen: boolean; toggle: () => void }) => {
 		toggle();
 		navigate(-1);
 	};
-	const scaleIn = {
-		hidden: {
-			scale: 0,
-			opacity: 0,
-		},
-		animate: {
-			scale: 1,
-			opacity: 1,
-			transition: {
-				duration: 0.2,
-			},
-		},
-		exit: {
-			scale: 0,
-			opacity: 0,
-			transition: {
-				duration: 0.2,
-			},
-		},
-	};
+
 	return (
 		<AnimatePresence mode="wait">
 			{isOpen && (
 				<motion.div
+					variants={scaleIn}
+					animate="animate"
+					exit="exit"
 					onClick={toggle}
 					className="fixed top-0 flex items-center justify-center w-screen h-screen z-100 bg-black/[0.7]"
 				>
