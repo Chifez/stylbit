@@ -1,4 +1,15 @@
 import { Variants } from "framer-motion";
+
+export const container: Variants = {
+	hidden: {},
+	visible: {
+		transition: {
+			staggerChildren: 0.15,
+			delayChildren: 2,
+		},
+	},
+};
+
 export const child: Variants = {
 	hidden: {
 		opacity: 0,

@@ -26,6 +26,7 @@ const MainVideo = () => {
 			VideoRef.current?.pause();
 		}
 	};
+
 	return (
 		<div className="relative my-5">
 			<button
