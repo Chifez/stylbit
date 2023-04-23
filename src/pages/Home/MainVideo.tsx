@@ -1,4 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion,useAnimation} from "framer-motion";
+import { zoomIn } from "../../utils/animations/videoZoom";
+import { useInView } from "react-intersection-observer";
+
 import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 import posterpic from "../../assets/posterpic.png";
 // import player from "videos/fashion.mp4";
@@ -8,26 +12,33 @@ const player =
 
 const MainVideo = () => {
 	const [isVideoPlaying, setIsVideoPlaying] = useState({
-		initialized: false,
-		playing: false,
+		initialized: true,
+		playing: true,
 	});
 
 	const VideoRef = useRef<HTMLVideoElement>(null);
+	const [ref,Inview] = useInView();
+	const control = useAnimation()
 
 	const handlePlay = () => {
 		setIsVideoPlaying({
-			initialized: true,
+			initialized: !isVideoPlaying.initialized,
 			playing: !isVideoPlaying.playing,
 		});
 		console.log("clicked");
 		if (!isVideoPlaying.playing) {
 			VideoRef.current?.play();
-		} else if (isVideoPlaying.initialized && isVideoPlaying.playing) {
+		} else if (isVideoPlaying.playing) {
 			VideoRef.current?.pause();
 		}
 	};
+useEffect(()=>{
+	if (Inview){
+		control.start("animate")
+	}
+},[control,Inview])
 	return (
-		<div className="relative my-5">
+		<motion.div ref={ref} variants={zoomIn} initial="initial" animate={control} className="relative my-5">
 			<button
 				className="absolute flex items-center justify-center top-[70%] md:top-[80%] left-[5%] bg-white text-black font-Hmid  text-sm md:text-lg uppercase rounded-3xl px-4 py-1 z-50"
 				data-state="play"
@@ -56,11 +67,12 @@ const MainVideo = () => {
 				width="100%"
 				height="60%"
 				ref={VideoRef}
+				autoPlay
 			>
 				<source src={player} type="video/mp4" />
 				your browser does not support the video tag
 			</video>
-		</div>
+		</motion.div>
 	);
 };
 

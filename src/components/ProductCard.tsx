@@ -31,12 +31,15 @@ const ProductCard = (props: { productItem: DocumentData | product }) => {
 
 	return (
 		<div className="max-h-max max-w-max py-5 px-3">
-			<Link to={`/product/preview/${id}`} className="w-[25rem] h-[27rem]">
+			<Link
+				to={`/product/preview/${id}`}
+				className="w-[25rem] h-[27rem] bg-[secondary]"
+			>
 				<img
 					src={image}
 					alt="product"
 					loading="lazy"
-					className=" w-[25rem] h-[27rem] object-cover"
+					className=" w-[25rem] h-[27rem] object-cover bg-[secondary]"
 				/>
 			</Link>
 
