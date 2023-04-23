@@ -5,7 +5,7 @@ export const container: Variants = {
 	visible: {
 		transition: {
 			staggerChildren: 0.15,
-			delayChildren: 2,
+			delayChildren: 1,
 		},
 	},
 };
