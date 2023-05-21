@@ -2,7 +2,7 @@ import { loadStripe, Stripe } from "@stripe/stripe-js";
 import axios from "axios";
 
 const keyApi = axios.create({
-  baseURL: "https://stylbit-sever-git-master-chifez.vercel.app/",
+  baseURL: "https://stylbit-sever-git-master-chifez.vercel.app:400/",
 });
 
 export const getPublicKey = async (setStripePromise: (e: any) => void) => {
