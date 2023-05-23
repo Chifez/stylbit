@@ -1,13 +1,13 @@
 declare module "*.jpg" {
-	const value: any;
-	export = value;
+  const value: string | undefined;
+  export = value;
 }
 declare module "*.png" {
-	const value: any;
-	export = value;
+  const value: string | undefined;
+  export = value;
 }
 
 declare module "*.mp4" {
-	const src: string;
-	export default value;
+  const src: string;
+  export default value;
 }
