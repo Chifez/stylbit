@@ -21,7 +21,7 @@ const MainHero: React.FC = () => {
 
   return (
     <div>
-      <div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[2.7rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-widest font-black">
+      <div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[2.6rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-widest font-black">
         <LetterAnimate data={header1} />
         <div className="flex flex-col items-start md:items-end gap-2 md:gap-5">
           <span className="flex justify-center items-center">
@@ -97,7 +97,7 @@ const LetterAnimate: React.FC<Props> = ({ data }: Props) => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="overflow-hidden leading-none"
+      className="overflow-hidden leading-none my-1 md:my-0"
     >
       {data.map((letter: string, index: number) => (
         <motion.span key={index} variants={child} className="inline-block ">
