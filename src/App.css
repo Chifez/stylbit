@@ -2,28 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: "Hlight";
-	src: url("./assets/fonts/HelveticaNeueCyr-Light.otf");
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 @font-face {
-	font-family: "Hmid";
-	src: url("./assets/fonts/HelveticaNeueCyr-Medium.otf");
+  font-family: "Hlight";
+  src: url("./assets/fonts/HelveticaNeueCyr-Light.otf");
 }
 
 @font-face {
-	font-family: "Hbold";
-	src: url("./assets/fonts/HelveticaNeueCyr-Bold.otf");
+  font-family: "Hmid";
+  src: url("./assets/fonts/HelveticaNeueCyr-Medium.otf");
 }
 
 @font-face {
-	font-family: "Hblack";
-	src: url("./assets/fonts/HelveticaNeueCyr-Black.otf");
+  font-family: "Hbold";
+  src: url("./assets/fonts/HelveticaNeueCyr-Bold.otf");
+}
+
+@font-face {
+  font-family: "Hblack";
+  src: url("./assets/fonts/HelveticaNeueCyr-Black.otf");
 }
 
 @layer utilities {
-	.hover {
-		@apply hover:bg-white hover:text-black transition-all;
-	}
+  .hover {
+    @apply hover:bg-white hover:text-black transition-all;
+  }
 }

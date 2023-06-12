@@ -15,7 +15,7 @@ import ProtectedRoutes from "./utils/ProtectedRoutes";
 import Products from "./pages/Products";
 import Preloader from "./components/Preloader";
 import { useEffect, useState } from "react";
-import { resolve } from "path";
+import { AnimatePresence } from "framer-motion";
 
 initializeApp(firebaseConfig);
 
@@ -30,7 +30,7 @@ function App() {
       setProgress(i);
     }
     setIsLoading(false);
-    navigate("/");
+    // navigate("/");
   };
 
   useEffect(() => {
@@ -39,9 +39,11 @@ function App() {
 
   return (
     <>
-      {isLoading && <Preloader progress={progress} />}
+      <AnimatePresence>
+        {isLoading && <Preloader progress={progress} />}
+      </AnimatePresence>
       {!isLoading && (
-        <div className="font-Hlight">
+        <div className="font-Hlight ">
           <Routes>
             <Route index element={<Home />} />
             <Route path="/cart" element={<Cart />} />

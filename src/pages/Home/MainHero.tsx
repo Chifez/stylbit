@@ -13,14 +13,14 @@ import {
 } from "../../utils/animations/imageReveal";
 import CircularText from "../../components/CircularText";
 
-const MainHero: React.FC = () => {
+const MainHero = () => {
   const header1 = Array.from("NEW");
   const header2 = Array.from("FASHION");
   const header3 = Array.from("COLLECTIONS");
   // const scroll = scrollLetter.split("");
 
   return (
-    <div>
+    <motion.div className="relative h-screen">
       <div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[2.6rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-widest font-black">
         <LetterAnimate data={header1} />
         <div className="flex flex-col items-start md:items-end gap-2 md:gap-5">
@@ -44,7 +44,7 @@ const MainHero: React.FC = () => {
           className="flex items-end gap-2 md:col-span-4 w-full"
         >
           <div className="relative h-[50vh] md:h-[70vh] w-fit overflow-hidden">
-            <ImageAnimate />
+            <ImageAnimate imagedelay={0.8} />
             <img
               src={hero1}
               alt="hero1"
@@ -52,7 +52,7 @@ const MainHero: React.FC = () => {
             />
           </div>
           <div className="relative h-[35vh] md:h-[55vh] w-fit overflow-hidden">
-            <ImageAnimate imagedelay={0.3} />
+            <ImageAnimate imagedelay={1.1} />
             <img
               src={hero2}
               alt="hero2"
@@ -84,7 +84,7 @@ const MainHero: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -110,9 +110,13 @@ const LetterAnimate: React.FC<Props> = ({ data }: Props) => {
 
 interface ImageProps {
   imagedelay?: number;
+  extraclasses?: string;
 }
 
-const ImageAnimate: React.FC<ImageProps> = ({ imagedelay }: ImageProps) => {
+const ImageAnimate: React.FC<ImageProps> = ({
+  imagedelay,
+  extraclasses,
+}: ImageProps) => {
   return (
     <motion.div
       variants={imageReveal}
@@ -124,7 +128,7 @@ const ImageAnimate: React.FC<ImageProps> = ({ imagedelay }: ImageProps) => {
         damping: 50,
         stiffness: 200,
       }}
-      className="absolute top-0 left-0 bg-primary h-full w-full z-10"
+      className={`absolute top-0 left-0 bg-primary h-full w-full z-10 ${extraclasses}`}
     ></motion.div>
   );
 };

@@ -1,11 +1,22 @@
 import { Variants } from "framer-motion";
 
 export const container: Variants = {
-  hidden: {},
+  hidden: {
+    // opacity: 1,
+    // height: "100%",
+    // y: "100%",
+  },
   visible: {
+    // opacity: 0,
+    // height: "0",
     transition: {
       staggerChildren: 0.15,
     },
+  },
+  exit: {
+    // opacity: 1,
+    // height: "100%",
+    // y: "-100%",
   },
 };
 
@@ -29,5 +40,9 @@ export const child: Variants = {
       damping: 50,
       stiffness: 200,
     },
+  },
+  exit: {
+    opacity: 0,
+    y: "-200%",
   },
 };

@@ -66,15 +66,15 @@ const DesktopProductFilter = ({
         initialstate="--select category--"
         extraclass="w-[11rem] p-2"
       />
-      <div className="flex items-center justify-between gap-1 px-2 border">
+      <div className="flex items-center justify-between gap-1 px-2 lg:w-[20rem] border rounded-md">
         <input
           type="text"
           placeholder="Search keyword"
-          className="flex-1 outline-none bg-transparent p-2"
+          className="flex-1 outline-none bg-transparent p-2 "
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <BsSearch
-          className=" fill-white"
+          className=" fill-white "
           // onClick={() => searchProducts(searchInput)}
         />
       </div>
@@ -105,10 +105,12 @@ const MobileProductFilter = ({
   return (
     <div className="relative flex justify-between items-center gap-2">
       <BsFilterLeft
-        className="w-10 h-10 border"
-        onClick={() => setIsOpen(!isOpen)}
+        className="w-[41px] h-[41px] border rounded-md"
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
       />
-      <div className=" flex-1 flex items-center justify-between gap-1 px-2 border">
+      <div className=" flex-1 flex items-center justify-between gap-1 px-2 border rounded-md">
         <input
           type="text"
           placeholder="Search keyword"
@@ -125,7 +127,7 @@ const MobileProductFilter = ({
           isOpen
             ? "-translate-x-[4vw] transition-all"
             : "-translate-x-[100vw] transition-all"
-        } bg-primary `}
+        } bg-primary`}
       >
         <FilterSlider setIsOpen={setIsOpen} />
       </div>
@@ -140,22 +142,22 @@ const FilterSlider = ({ setIsOpen }: { setIsOpen: (e: boolean) => void }) => {
         onClick={() => setIsOpen(false)}
         className="absolute right-0 top-1 h-9 w-9"
       />
-      <div className={`flex flex-col justify-around p-2 w-[80vw] h-[50vh]`}>
+      <div className={`flex flex-col justify-around p-2 w-[80vw] h-[80vh]`}>
         <SelectInput
           Options={categoryOptions}
           initialstate="--select category--"
-          extraclass="w-[11rem] p-2"
+          extraclass=" p-2"
         />
 
         <SelectInput
           Options={sortOptions}
           initialstate="--sort products--"
-          extraclass="w-[10rem] p-2"
+          extraclass="p-2"
         />
         <SelectInput
           Options={languageOptions}
           initialstate={languageOptions.options[0].title}
-          extraclass="w-20 p-2"
+          extraclass=" p-2"
         />
       </div>
     </>
