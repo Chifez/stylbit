@@ -5,6 +5,7 @@ This is an e-commerce website called [faloni](https://stylbit.vercel.app/) scaff
 This e-commerce website uses stripe as its payment gateway,the assets and product data are stored and retrieved from firebase.
 In general users can login,signup,logout,add items to the cart,remove items from the cart,increase and decrease items in the cart,and finally make payments using the stripe payment gateway.
  
+![Screenshot (67)](https://github.com/Chifez/stylbit/assets/69228399/e779b8b8-2662-4ff7-9b56-b9d6358458f6)
 
 ## Tools and Languages
 - Typescript
