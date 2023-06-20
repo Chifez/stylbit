@@ -21,7 +21,7 @@ const MainHero = () => {
 
   return (
     <div className="relative h-full md:h-screen">
-      <div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[2.6rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-widest font-black">
+      <div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[2.45rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-wider  md:tracking-widest font-black">
         <LetterAnimate data={header1} />
         <div className="flex flex-col items-start md:items-end gap-2 md:gap-5">
           <span className="flex justify-center items-center">
