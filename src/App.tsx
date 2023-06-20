@@ -37,6 +37,42 @@ function App() {
     loadWebdata();
   }, []);
 
+  // const [loadingProgress, setLoadingProgress] = useState(0);
+  // const [isLoading, setIsLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const updateProgress = (event: {
+  //     lengthComputable: any;
+  //     loaded: number;
+  //     total: number;
+  //   }) => {
+  //     if (event.lengthComputable) {
+  //       const progress = Math.round((event.loaded / event.total) * 100);
+  //       setLoadingProgress((prev) => (prev += progress));
+  //     }
+  //   };
+
+  //   const finishLoading = () => {
+  //     setIsLoading(false);
+  //   };
+
+  //   const loadEvent = new ProgressEvent("load");
+  //   const progressEvent = new ProgressEvent("progress");
+  //   const xhr = new XMLHttpRequest();
+
+  //   xhr.addEventListener("load", finishLoading);
+  //   xhr.addEventListener("progress", updateProgress);
+
+  //   // Replace 'your-html-page-url' with the actual URL of your HTML page
+  //   xhr.open("GET", "https://stylbit.vercel.app/");
+  //   xhr.send();
+
+  //   return () => {
+  //     xhr.removeEventListener("load", finishLoading);
+  //     xhr.removeEventListener("progress", updateProgress);
+  //   };
+  // }, []);
+
   return (
     <>
       <AnimatePresence>
