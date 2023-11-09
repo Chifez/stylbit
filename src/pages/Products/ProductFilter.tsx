@@ -1,8 +1,10 @@
-import { useState } from "react";
-import { BsSearch, BsFilterLeft } from "react-icons/bs";
-import { IoMdClose } from "react-icons/io";
-import InputForm from "../../components/InputInfo";
-import SelectInput from "../../components/SelectFilter";
+import { useState } from 'react';
+import { BsSearch, BsFilterLeft } from 'react-icons/bs';
+import { IoMdClose } from 'react-icons/io';
+import InputForm from '../../components/InputInfo';
+import SelectInput from '../../components/SelectFilter';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import useProdFetchId from '../../hooks/useProdFetchId';
 // import {
 // 	searchProducts,
 // 	getMensProducts,
@@ -10,30 +12,36 @@ import SelectInput from "../../components/SelectFilter";
 // } from "../../features/api/product.api";
 
 const categoryOptions = {
-  optionId: "category",
+  optionId: 'category',
   options: [
     {
       title: "Men's wear",
-      //  getCategory: getMensProducts
+      value: 'category men',
     },
     {
       title: "Female's wear",
-      // getCategory: getWomenProducts
+      value: 'category women',
     },
   ],
 };
 const sortOptions = {
-  optionId: "sortby",
-  options: [{ title: "PRICE" }, { title: "A-Z" }, { title: "Z-A" }],
+  optionId: 'sortby',
+  options: [
+    { title: 'PRICE', value: 'price' },
+    { title: 'A-Z', value: 'descending' },
+    { title: 'Z-A', value: 'ascending' },
+  ],
 };
 const languageOptions = {
-  optionId: "Language",
-  options: [{ title: "EN" }, { title: "ESP" }],
+  optionId: 'language',
+  options: [
+    { title: 'EN', value: 'english' },
+    { title: 'ESP', value: 'spanish' },
+  ],
 };
 
 const ProductFilter = () => {
-  const [searchInput, setSearchInput] = useState<string>("");
-
+  const [searchInput, setSearchInput] = useState<string>('');
   return (
     <>
       <div className="hidden md:block">
@@ -125,8 +133,8 @@ const MobileProductFilter = ({
       <div
         className={`absolute top-full p-2 ${
           isOpen
-            ? "-translate-x-[4vw] transition-all"
-            : "-translate-x-[100vw] transition-all"
+            ? '-translate-x-[4vw] transition-all'
+            : '-translate-x-[100vw] transition-all'
         } bg-primary`}
       >
         <FilterSlider setIsOpen={setIsOpen} />
@@ -144,17 +152,19 @@ const FilterSlider = ({ setIsOpen }: { setIsOpen: (e: boolean) => void }) => {
       />
       <div className={`flex flex-col justify-around p-2 w-[80vw] h-[80vh]`}>
         <SelectInput
+          openSlide={setIsOpen}
           Options={categoryOptions}
           initialstate="--select category--"
           extraclass=" p-2"
         />
-
         <SelectInput
+          openSlide={setIsOpen}
           Options={sortOptions}
           initialstate="--sort products--"
           extraclass="p-2"
         />
         <SelectInput
+          openSlide={setIsOpen}
           Options={languageOptions}
           initialstate={languageOptions.options[0].title}
           extraclass=" p-2"

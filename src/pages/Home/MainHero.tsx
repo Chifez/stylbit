@@ -1,27 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import RoundButton from "../../components/RoundButton";
-import hero1 from "../../assets/deji-akinyele-ARm28szwP0o-unsplash.webp";
-import hero2 from "../../assets/alexander-jawfox-GNd5gstTSg8-unsplash.webp";
-import { BsArrowDown } from "react-icons/bs";
-import { FC } from "react";
-import { motion } from "framer-motion";
-import { child, container } from "../../utils/animations/TextReveal";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import RoundButton from '../../components/RoundButton';
+import hero1 from '../../assets/deji-akinyele-ARm28szwP0o-unsplash.webp';
+import hero2 from '../../assets/alexander-jawfox-GNd5gstTSg8-unsplash.webp';
+import { BsArrowDown } from 'react-icons/bs';
+import { FC } from 'react';
+import { motion } from 'framer-motion';
+import { child, container } from '../../utils/animations/TextReveal';
 import {
   imageContainer,
   imageReveal,
-} from "../../utils/animations/imageReveal";
-import CircularText from "../../components/CircularText";
+} from '../../utils/animations/imageReveal';
+import CircularText from '../../components/CircularText';
 
 const MainHero = () => {
-  const header1 = Array.from("NEW");
-  const header2 = Array.from("FASHION");
-  const header3 = Array.from("COLLECTIONS");
+  const header1 = Array.from('NEW');
+  const header2 = Array.from('FASHION');
+  const header3 = Array.from('COLLECTIONS');
   // const scroll = scrollLetter.split("");
 
   return (
     <div className="relative h-full md:h-screen">
-      <div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-[2.45rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-wider  md:tracking-widest font-black">
+      <div className="relative top-0 md:top-5 flex flex-col md:flex-row justify-between items-start my-5 md:my-0 text-4xl md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] tracking-wider md:tracking-widest font-black">
         <LetterAnimate data={header1} />
         <div className="flex flex-col items-start md:items-end gap-2 md:gap-5">
           <span className="flex justify-center items-center">
@@ -60,11 +60,11 @@ const MainHero = () => {
             />
           </div>
         </motion.div>
-        <div className="flex flex-col justify-between items-center md:items-start md:col-span-3 h-[30vh] md:h-[55vh] text-sm text-justify w-full">
+        <div className="flex flex-col justify-between items-center md:items-start md:col-span-3 h-[22vh] md:h-[55vh] text-sm text-justify w-full">
           <h2>
             The brand was originally aimed at men's fashion.In 1985 all women's
             fashion were launched in all its dimensions;from casual to the most
-            urban{" "}
+            urban{' '}
           </h2>
           <div className="flex items-center relative justify-center bg-transparent fill-white  w-[5rem] h-[5rem] rounded-full ">
             <div className="h-8 overflow-hidden">
@@ -123,7 +123,7 @@ const ImageAnimate: React.FC<ImageProps> = ({
       animate="animate"
       transition={{
         duration: 0.7,
-        type: "spring",
+        type: 'spring',
         delay: imagedelay ? imagedelay : 0,
         damping: 50,
         stiffness: 200,

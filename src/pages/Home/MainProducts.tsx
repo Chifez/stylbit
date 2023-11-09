@@ -71,19 +71,25 @@ const MainProducts = () => {
             textStyle={"text-xl font-bold text-white"}
           />
         )}
+
         {isError && (
           <>
             <h2>Somethig went wrong</h2>
-            <p onClick={() => refetch()}>try again</p>
+            <p onClick={()=>refetch()}>try again</p>
           </>
         )}
-        {products?.map(
+
+        {products && products.length > 0 ? products?.map(
           (productItem) => (
             // productItem.toppick && (
             <ProductCard key={productItem.id} productItem={productItem} />
           )
           // )
-        )}
+        ):
+        <>
+        <p>No products Available,kindly check your check you internet connection</p>
+      </>
+        }
       </Slider>
     </div>
   );

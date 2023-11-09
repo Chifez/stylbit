@@ -1,25 +1,25 @@
-import { ChangeEvent, useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
-import AuthNavBar from "../../components/AuthNavBar";
-import InputForm from "../../components/InputInfo";
+import { ChangeEvent, useState } from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthNavBar from '../../components/AuthNavBar';
+import InputForm from '../../components/InputInfo';
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
-} from "firebase/auth";
-import { useAppDispatch } from "../../app/hooks";
-import { userAuth } from "../../app/authSlice";
-import { useMutation } from "@tanstack/react-query";
-import { ThreeDots } from "react-loader-spinner";
+} from 'firebase/auth';
+import { useAppDispatch } from '../../app/hooks';
+import { userAuth } from '../../app/authSlice';
+import { useMutation } from '@tanstack/react-query';
+import { ThreeDots } from 'react-loader-spinner';
 
 const SignInForm = () => {
   interface Data {
     email: string;
     password: string;
   }
-  const [inputData, setInputData] = useState<Data>({ email: "", password: "" });
+  const [inputData, setInputData] = useState<Data>({ email: '', password: '' });
 
   const { email, password } = inputData;
 
@@ -49,7 +49,7 @@ const SignInForm = () => {
   const dispatch = useAppDispatch();
   const onSuccess = () => {
     dispatch(userAuth({ user: true, userId: data?.user.uid }));
-    navigate("/checkout");
+    navigate('/checkout');
   };
 
   const mutation = useMutation({
@@ -65,7 +65,7 @@ const SignInForm = () => {
   return (
     <div className="relative flex flex-col justify-center items-center h-screen">
       <AuthNavBar />
-      <div className="flex flex-col p-5 md:p-10 rounded-xl md:shadow-2xl gap-2 w-full md:w-[32vw]">
+      <div className="flex flex-col p-5 lg:p-10 rounded-xl md:shadow-2xl gap-2 w-full md:w-[80%] xl:w-[32vw]">
         <h2 className="text-center font-semibold capitalize">Sign in</h2>
         <div className="flex flex-col gap-5">
           <InputForm
@@ -118,12 +118,12 @@ const SignInForm = () => {
           className="flex justify-center items-center gap-2 p-2 bg-secondary border-secondary font-semibold rounded-sm"
           onClick={() => googleMutation.mutate()}
         >
-          {" "}
+          {' '}
           <FcGoogle />
           Sign in with Google
         </button>
         <div className="text-[0.9rem] text-center">
-          dont have an account ?{" "}
+          dont have an account ?{' '}
           <Link to="/signup" className="underline">
             sign up
           </Link>

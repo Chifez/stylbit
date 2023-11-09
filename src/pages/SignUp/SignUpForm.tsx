@@ -1,13 +1,13 @@
-import { ChangeEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import AuthNavBar from "../../components/AuthNavBar";
-import InputForm from "../../components/InputInfo";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useMutation } from "@tanstack/react-query";
-import { ThreeDots } from "react-loader-spinner";
-import { userAuth } from "../../app/authSlice";
-import { useAppDispatch } from "../../app/hooks";
+import { ChangeEvent, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
+import AuthNavBar from '../../components/AuthNavBar';
+import InputForm from '../../components/InputInfo';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { useMutation } from '@tanstack/react-query';
+import { ThreeDots } from 'react-loader-spinner';
+import { userAuth } from '../../app/authSlice';
+import { useAppDispatch } from '../../app/hooks';
 
 const SignUpForm = () => {
   interface Data {
@@ -18,10 +18,10 @@ const SignUpForm = () => {
   }
 
   const [inputData, setInputData] = useState<Data>({
-    name: "",
-    email: "",
-    password: "",
-    confirm_password: "",
+    name: '',
+    email: '',
+    password: '',
+    confirm_password: '',
   });
 
   const { name, email, password, confirm_password } = inputData;
@@ -38,7 +38,7 @@ const SignUpForm = () => {
   const dispatch = useAppDispatch();
   const onSuccess = () => {
     dispatch(userAuth({ user: true, userId: data?.user.uid }));
-    navigate("/checkout");
+    navigate('/checkout');
   };
 
   const auth = getAuth();
@@ -61,7 +61,7 @@ const SignUpForm = () => {
   return (
     <div className="relative flex flex-col justify-center items-center h-screen">
       <AuthNavBar />
-      <form className="flex flex-col p-5 md:p-10 md:shadow-xl w-full md:w-[32vw] gap-2">
+      <form className="flex flex-col p-5 lg:p-10 md:shadow-xl w-full md:w-[80%] xl:w-[32vw] gap-2">
         <h2 className="text-center font-semibold">Create New Account</h2>
         <div className="flex flex-col gap-5">
           <InputForm
@@ -70,7 +70,7 @@ const SignUpForm = () => {
             name="name"
             value={name}
             placeholder="Name"
-            className="flex-1 px-1 py-2 rounded-sm bg-transparent"
+            className="flex-1 px-1 py-2 bg-transparent"
             inputChange={(e) => handleChange(e)}
           />
           <InputForm
@@ -79,17 +79,17 @@ const SignUpForm = () => {
             name="email"
             value={email}
             placeholder="Email"
-            className="flex-1 px-1 py-2 rounded-sm bg-transparent"
+            className="flex-1 px-1 py-2 bg-transparent"
             inputChange={(e) => handleChange(e)}
           />
-          <div className="flex flex-row items-start gap-2 w-full">
+          <div className="flex flex-col md:flex-row items-start gap-5 md:gap-2 w-full">
             <InputForm
               label="Password"
               type="password"
               name="password"
               value={password}
               placeholder="Password"
-              className="flex-1 p-1 rounded-sm bg-transparent w-full"
+              className="flex-1 px-1 py-2 bg-transparent w-full"
               inputChange={(e) => handleChange(e)}
             />
             <InputForm
@@ -98,7 +98,7 @@ const SignUpForm = () => {
               name="confirm_password"
               value={confirm_password}
               placeholder="Confirm password"
-              className="flex-1 p-1 rounded-sm  bg-transparent w-full"
+              className="flex-1 px-1 py-2 bg-transparent w-full"
               inputChange={(e) => handleChange(e)}
             />
           </div>
