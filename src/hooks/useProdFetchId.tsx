@@ -9,12 +9,19 @@ const useProdFetchId = (idType: string, id: string | boolean | undefined) => {
   const dispatch = useAppDispatch();
 
   const getProduct = async (id: string | boolean | undefined) => {
-    const q = query(collection(db, 'products'), where(idType, '==', id));
-    const querySnapshot = await getDocs(q);
+    if (id === 'All category') {
+      const querySnapshot = await getDocs(collection(db, 'products'));
+      const fetchCategory = querySnapshot.docs.map((doc) => doc.data());
+      dispatch(setProductList(fetchCategory));
+      return fetchCategory;
+    } else {
+      const q = query(collection(db, 'products'), where(idType, '==', id));
+      const querySnapshot = await getDocs(q);
+      const fetchCategory = querySnapshot.docs.map((doc) => doc.data());
+      dispatch(setProductList(fetchCategory));
+      return fetchCategory;
+    }
     // console.log(querySnapshot.docs.map((doc) => doc.data()));
-    const fetchCategory = querySnapshot.docs.map((doc) => doc.data());
-    dispatch(setProductList(fetchCategory));
-    return fetchCategory;
   };
   const productQuery = useQuery({
     queryKey: ['products', id],

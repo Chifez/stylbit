@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { SelectFilter } from '../Data/Types';
 import { RiArrowDropDownLine } from 'react-icons/ri';
@@ -22,11 +22,7 @@ const SelectInput = (props: {
   );
   const [open, setOpen] = useState(false);
 
-  function handleFilterUpdate(
-    e: React.MouseEvent<HTMLOptionElement, MouseEvent>
-  ) {
-    e.preventDefault();
-
+  function handleFilterUpdate() {
     if (filterValue) {
       queryParams.set(props.Options.optionId, filterValue);
     }
@@ -34,16 +30,28 @@ const SelectInput = (props: {
   }
   const filterType = (e: React.MouseEvent<HTMLOptionElement, MouseEvent>) => {
     e.preventDefault();
-    setSelectedInput((e.target as HTMLInputElement).value);
+    handleFilterUpdate();
     setFilterValue((e.target as HTMLInputElement).value);
-    handleFilterUpdate(e);
+    setSelectedInput((e.target as HTMLInputElement).value);
     setOpen(false);
     if (props.openSlide) {
       props.openSlide(false);
     }
   };
 
-  useProdFetchId(props.Options.optionId, selectedInput);
+  const getCategoryId = (input: string) => {
+    if (props.Options.optionId == 'category') {
+      const optionId = options.filter(
+        (categoryOption) => categoryOption.title === input
+      );
+      return optionId[0]?.value;
+    }
+  };
+  useProdFetchId(props.Options.optionId, getCategoryId(selectedInput));
+
+  useEffect(() => {
+    handleFilterUpdate();
+  }, [selectedInput]);
   return (
     <div>
       <div
@@ -68,7 +76,7 @@ const SelectInput = (props: {
             <option
               className="hover:bg-[grey] px-2"
               key={index}
-              value={item?.value}
+              value={item?.title}
               onClick={
                 (e) => filterType(e)
 

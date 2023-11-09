@@ -15,23 +15,27 @@ const categoryOptions = {
   optionId: 'category',
   options: [
     {
-      title: "Men's wear",
+      title: 'All category',
+      value: 'All category',
+    },
+    {
+      title: 'Male wear',
       value: 'category men',
     },
     {
-      title: "Female's wear",
+      title: 'Female wear',
       value: 'category women',
     },
   ],
 };
-const sortOptions = {
-  optionId: 'sortby',
-  options: [
-    { title: 'PRICE', value: 'price' },
-    { title: 'A-Z', value: 'descending' },
-    { title: 'Z-A', value: 'ascending' },
-  ],
-};
+// const sortOptions = {
+//   optionId: 'sortby',
+//   options: [
+//     { title: 'price', value: 'newprice' },
+//     { title: 'A-Z', value: 'descending' },
+//     { title: 'Z-A', value: 'ascending' },
+//   ],
+// };
 const languageOptions = {
   optionId: 'language',
   options: [
@@ -87,11 +91,11 @@ const DesktopProductFilter = ({
         />
       </div>
       <div className="flex gap-3">
-        <SelectInput
+        {/* <SelectInput
           Options={sortOptions}
           initialstate="--sort products--"
           extraclass="w-[10rem] p-2"
-        />
+        /> */}
         <SelectInput
           Options={languageOptions}
           initialstate={languageOptions.options[0].title}
@@ -157,12 +161,12 @@ const FilterSlider = ({ setIsOpen }: { setIsOpen: (e: boolean) => void }) => {
           initialstate="--select category--"
           extraclass=" p-2"
         />
-        <SelectInput
+        {/* <SelectInput
           openSlide={setIsOpen}
           Options={sortOptions}
           initialstate="--sort products--"
           extraclass="p-2"
-        />
+        /> */}
         <SelectInput
           openSlide={setIsOpen}
           Options={languageOptions}
